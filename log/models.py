@@ -14,7 +14,7 @@ class Log(models.Model):
     date = models.DateField(default=timezone.now)
     time = models.TimeField(default=timezone.now)
     important = models.BooleanField(default=False)
-    category = models.CharField(max_length=2, choices=Category.choices, default=Category.OTHER)
+    category = models.CharField(max_length=20, choices=Category.choices, default=Category.OTHER)
 
     def __str__(self):
         return str(self.id)
