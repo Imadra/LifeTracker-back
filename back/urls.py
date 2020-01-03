@@ -21,4 +21,7 @@ urlpatterns = [
     path('auth/', include('authen.urls')),
     path('logging/', include('log.urls')),
     path('calendar/', include('mycalendar.urls')),
+    path('people/', include('people.urls')),
+    path('values/', include('values.urls')),
+    path('rules/', include('rules.urls')),
 ]

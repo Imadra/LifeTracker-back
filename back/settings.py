@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'authen',
     'log',
     'mycalendar',
+    'people',
+    'values',
+    'rules',
 ]
 
 MIDDLEWARE = [
