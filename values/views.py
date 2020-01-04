@@ -27,6 +27,19 @@ class Add(APIView):
 		return Response(status=status.HTTP_200_OK, data="Value: Codeforces redblack koi")
 
 @permission_classes([IsAuthenticated])
+class Delete(APIView):
+	def post(self, request):
+		id = request.data.get("id")
+		print(id)
+		try:
+			Value.objects.filter(id=id).delete()
+		except Exception as e:
+			print(str(e))
+			print("-------------------------------------------------------")
+			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
+		return Response(status=status.HTTP_200_OK, data="Value: Codeforces redblack koi")
+
+@permission_classes([IsAuthenticated])
 class GetAll(APIView):
 	def get(self, request):
 		values = Value.objects.values()

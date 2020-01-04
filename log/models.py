@@ -1,6 +1,8 @@
 from django.db import models
-from django.utils import timezone
+# from django.utils.timezone import localtime
+# local = localtime(new datetime())
 from django.utils.translation import gettext_lazy as _
+from datetime import datetime
 
 # Create your models here.
 class Log(models.Model):
@@ -11,8 +13,8 @@ class Log(models.Model):
     	OTHER = 'O', _('OTHER')
 
     text = models.TextField(max_length=500, default="No text")
-    date = models.DateField(default=timezone.now)
-    time = models.TimeField(default=timezone.now)
+    date = models.DateField(default=datetime.now)
+    time = models.TimeField(default=datetime.now)
     important = models.BooleanField(default=False)
     category = models.CharField(max_length=20, choices=Category.choices, default=Category.OTHER)
 

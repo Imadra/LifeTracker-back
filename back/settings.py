@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'mycalendar',
     'people',
     'values',
-    'rules',
     'dtree',
 ]
 
@@ -129,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Almaty'
 
 USE_I18N = True
 

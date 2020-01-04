@@ -30,16 +30,26 @@ class Add(APIView):
 		return Response(status=status.HTTP_200_OK, data="Codeforces red koi")
 
 @permission_classes([IsAuthenticated])
+class Delete(APIView):
+	def post(self, request):
+		id = request.data.get("id")
+		print(id)
+		try:
+			Log.objects.filter(id=id).delete()
+		except Exception as e:
+			print(str(e))
+			print("-------------------------------------------------------")
+			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
+		return Response(status=status.HTTP_200_OK, data="Log: Codeforces redblack koi")
+
+@permission_classes([IsAuthenticated])
 class GetAll(APIView):
 	def get(self, request):
 		logs = Log.objects.values()
 		ret = []
 		for log in logs:
-			cur = {}
-			cur["text"] = log["text"]
+			cur = log
 			cur["time"] = str(log["date"]) + " => " + str(log["time"]).split(".")[0]
-			cur["important"] = log["important"]
-			cur["category"] = log["category"]
 			ret.append(cur)
 		ret.reverse()
 		return Response(status=status.HTTP_200_OK, data=ret)

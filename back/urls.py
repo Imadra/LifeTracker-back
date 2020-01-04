@@ -23,6 +23,5 @@ urlpatterns = [
     path('calendar/', include('mycalendar.urls')),
     path('people/', include('people.urls')),
     path('values/', include('values.urls')),
-    path('rules/', include('rules.urls')),
     path('dtree/', include('dtree.urls')),
 ]
