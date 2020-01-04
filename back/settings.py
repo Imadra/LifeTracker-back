@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'people',
     'values',
     'rules',
+    'dtree',
 ]
 
 MIDDLEWARE = [
