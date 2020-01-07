@@ -31,17 +31,29 @@ class GetInfo(APIView):
 			return Response(status=status.HTTP_200_OK, data=days[0])
 
 @permission_classes([IsAuthenticated])
-class AddDay(APIView):
+class EditDay(APIView):
 	def post(self, request):
 		year = request.data.get("year")
 		month = request.data.get("month")
 		day = request.data.get("day")
-		mood = request.data.get("mood")
-		note = request.data.get("note").upper()
-		args = {"year": text, "month": important, "mood": DayInfo.Mood[mood], "note": note}
-		try:
-			DayInfo.objects.create(**args)
-		except Exception as e:
-			print(str(e))
-			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
-		return Response(status=status.HTTP_200_OK, data="CF black shygar")
+		mood = request.data.get("mood").upper()
+		note = request.data.get("note")
+		args = {"year": year, "month": month, "day": day, "mood": DayInfo.Mood[mood], "note": note}
+		day = DayInfo.objects.filter(year=year, month=month, day=day)
+		if len(day) == 0:
+			try:
+				DayInfo.objects.create(**args)
+			except Exception as e:
+				print(str(e))
+				return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
+		else:
+			day = day[0]
+			print(note)
+			day.note = note
+			day.mood = DayInfo.Mood[mood]
+			try:
+				day.save()
+			except Exception as e:
+				print(str(e))
+				return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
+		return Response(status=status.HTTP_200_OK, data="Calendar: CF black shygar")

@@ -26,12 +26,26 @@ class CodeforcesAdd(APIView):
 		return Response(status=status.HTTP_200_OK, data="Codeforces: Codeforces redblack koi")
 
 @permission_classes([IsAuthenticated])
+class CodeforcesDelete(APIView):
+	def post(self, request):
+		id = request.data.get("id")
+		print(id)
+		try:
+			CodeforcesTree.objects.filter(id=id).delete()
+		except Exception as e:
+			print(str(e))
+			print("-------------------------------------------------------")
+			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
+		return Response(status=status.HTTP_200_OK, data="CodeforcesTree: Codeforces redblack koi")
+
+@permission_classes([IsAuthenticated])
 class CodeforcesGet(APIView):
 	def get(self, request):
 		tree = CodeforcesTree.objects.values()
 		for node in tree:
 			node["children"] = []
 			node["attributes"] = {"id": node["id"]}
+			node["_collapsed"] = True
 		tree.reverse()
 		# print(tree)
 		new_tree = []
@@ -41,6 +55,7 @@ class CodeforcesGet(APIView):
 				if node_par["id"] == node["parent_id"]:
 					node_par["children"].append(node)
 					new_tree.remove(node)
+		new_tree[0]["_collapsed"] = False
 		# print(new_tree)
 		return Response(status=status.HTTP_200_OK, data=new_tree)
 
@@ -64,12 +79,26 @@ class RulesAdd(APIView):
 		return Response(status=status.HTTP_200_OK, data="Rule: Codeforces redblack koi")
 
 @permission_classes([IsAuthenticated])
+class RulesDelete(APIView):
+	def post(self, request):
+		id = request.data.get("id")
+		print(id)
+		try:
+			RuleTree.objects.filter(id=id).delete()
+		except Exception as e:
+			print(str(e))
+			print("-------------------------------------------------------")
+			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
+		return Response(status=status.HTTP_200_OK, data="RuleTree: Codeforces redblack koi")
+
+@permission_classes([IsAuthenticated])
 class RulesGet(APIView):
 	def get(self, request):
 		tree = RuleTree.objects.values()
 		for node in tree:
 			node["children"] = []
 			node["attributes"] = {"id": node["id"]}
+			node["_collapsed"] = True
 		tree.reverse()
 		# print(tree)
 		new_tree = []
@@ -79,5 +108,6 @@ class RulesGet(APIView):
 				if node_par["id"] == node["parent_id"]:
 					node_par["children"].append(node)
 					new_tree.remove(node)
-		# print(new_tree)
+		new_tree[0]["_collapsed"] = False
+		print(new_tree)
 		return Response(status=status.HTTP_200_OK, data=new_tree)
