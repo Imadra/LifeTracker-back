@@ -97,8 +97,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'lifetracker',
-        'USER': 'postgres',
-        'PASSWORD': '230091',
+        'USER': 'rassulkhassen',
+        'PASSWORD': '230091rasTRUNCATE django_content_type;',
         'HOST': 'localhost',
         'PORT': '',
     }

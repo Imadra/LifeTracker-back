@@ -23,3 +23,14 @@ class RuleTree(MPTTModel):
 
 	def __repr__(self):
 	   return self.__str__()
+
+class EconTree(MPTTModel):
+	name = models.CharField(max_length=100)
+	# attributes = models.CharField(max_length=100)
+	parent = TreeForeignKey('self', null=True, blank=True, related_name='children', on_delete=models.CASCADE)
+
+	def __str__(self):
+	   return "<EconTree: {}>".format(self.id)
+
+	def __repr__(self):
+	   return self.__str__()

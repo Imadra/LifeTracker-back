@@ -5,6 +5,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import permission_classes, api_view
 
 from .models import Person
+from .serializers import PersonSerializer
 
 @permission_classes([IsAuthenticated])
 class Add(APIView):
@@ -13,21 +14,25 @@ class Add(APIView):
 		commentary = request.data.get("commentary")
 		strengths = request.data.get("strengths")
 		weaknesses = request.data.get("weaknesses")
-		happyness = request.data.get("happyness")
+		happiness = request.data.get("happiness")
 		img = request.data.get("img")
+		logo = request.data.get("logo")
+		# description = request.data.get("description")
 
 		args = {
 			"name": name, 
 			"commentary": commentary, 
-			"strengths": strengths, 
-			"weaknesses": weaknesses, 
-			"happyness": happyness,
-			"img": img
+			"strength_list": strengths,
+			"weakness_list": weaknesses,
+			"happiness": happiness,
+			"img": img,
+			"logo": logo,
+			"description": "",
 		}
 		try:
 			Person.objects.create(**args)
 		except Exception as e:
-			# print(str(e))
+			print(str(e))
 			# print("-------------------------------------------------------")
 			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
 		return Response(status=status.HTTP_200_OK, data="Person: Codeforces redblack koi")
@@ -49,12 +54,15 @@ class Delete(APIView):
 class GetAll(APIView):
 	def get(self, request):
 		people = Person.objects.values()
-		# ret = []
-		# for person in people:
-		# 	cur = {}
-		# 	cur["name"] = person["name"]
-		# 	cur["important"] = log["important"]
-		# 	cur["category"] = log["category"]
-		# 	ret.append(cur)
-		# ret.reverse()
 		return Response(status=status.HTTP_200_OK, data=people)
+
+@permission_classes([IsAuthenticated])
+class Get(APIView):
+	def get(self, request):
+		id = request.GET.get("id")
+		try:
+			person = Person.objects.get(id=id)
+		except Exception as e:
+			print(str(e))
+			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
+		return Response(status=status.HTTP_200_OK, data=PersonSerializer(person).data)

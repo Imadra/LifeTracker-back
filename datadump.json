@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: auth_group; Type: TABLE; Schema: public; Owner: postgres
+-- Name: auth_group; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.auth_group (
@@ -30,10 +30,10 @@ CREATE TABLE public.auth_group (
 );
 
 
-ALTER TABLE public.auth_group OWNER TO postgres;
+ALTER TABLE public.auth_group OWNER TO rassulkhassen;
 
 --
--- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.auth_group_id_seq
@@ -45,17 +45,17 @@ CREATE SEQUENCE public.auth_group_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_group_id_seq OWNER TO postgres;
+ALTER TABLE public.auth_group_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.auth_group_id_seq OWNED BY public.auth_group.id;
 
 
 --
--- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: postgres
+-- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.auth_group_permissions (
@@ -65,10 +65,10 @@ CREATE TABLE public.auth_group_permissions (
 );
 
 
-ALTER TABLE public.auth_group_permissions OWNER TO postgres;
+ALTER TABLE public.auth_group_permissions OWNER TO rassulkhassen;
 
 --
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.auth_group_permissions_id_seq
@@ -80,17 +80,17 @@ CREATE SEQUENCE public.auth_group_permissions_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_group_permissions_id_seq OWNER TO postgres;
+ALTER TABLE public.auth_group_permissions_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.auth_group_permissions_id_seq OWNED BY public.auth_group_permissions.id;
 
 
 --
--- Name: auth_permission; Type: TABLE; Schema: public; Owner: postgres
+-- Name: auth_permission; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.auth_permission (
@@ -101,10 +101,10 @@ CREATE TABLE public.auth_permission (
 );
 
 
-ALTER TABLE public.auth_permission OWNER TO postgres;
+ALTER TABLE public.auth_permission OWNER TO rassulkhassen;
 
 --
--- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.auth_permission_id_seq
@@ -116,17 +116,17 @@ CREATE SEQUENCE public.auth_permission_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_permission_id_seq OWNER TO postgres;
+ALTER TABLE public.auth_permission_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.auth_permission_id_seq OWNED BY public.auth_permission.id;
 
 
 --
--- Name: auth_user; Type: TABLE; Schema: public; Owner: postgres
+-- Name: auth_user; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.auth_user (
@@ -144,10 +144,10 @@ CREATE TABLE public.auth_user (
 );
 
 
-ALTER TABLE public.auth_user OWNER TO postgres;
+ALTER TABLE public.auth_user OWNER TO rassulkhassen;
 
 --
--- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: postgres
+-- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.auth_user_groups (
@@ -157,10 +157,10 @@ CREATE TABLE public.auth_user_groups (
 );
 
 
-ALTER TABLE public.auth_user_groups OWNER TO postgres;
+ALTER TABLE public.auth_user_groups OWNER TO rassulkhassen;
 
 --
--- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.auth_user_groups_id_seq
@@ -172,17 +172,17 @@ CREATE SEQUENCE public.auth_user_groups_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_user_groups_id_seq OWNER TO postgres;
+ALTER TABLE public.auth_user_groups_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: auth_user_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.auth_user_groups_id_seq OWNED BY public.auth_user_groups.id;
 
 
 --
--- Name: auth_user_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: auth_user_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.auth_user_id_seq
@@ -194,17 +194,17 @@ CREATE SEQUENCE public.auth_user_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_user_id_seq OWNER TO postgres;
+ALTER TABLE public.auth_user_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: auth_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: auth_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.auth_user_id_seq OWNED BY public.auth_user.id;
 
 
 --
--- Name: auth_user_user_permissions; Type: TABLE; Schema: public; Owner: postgres
+-- Name: auth_user_user_permissions; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.auth_user_user_permissions (
@@ -214,10 +214,10 @@ CREATE TABLE public.auth_user_user_permissions (
 );
 
 
-ALTER TABLE public.auth_user_user_permissions OWNER TO postgres;
+ALTER TABLE public.auth_user_user_permissions OWNER TO rassulkhassen;
 
 --
--- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.auth_user_user_permissions_id_seq
@@ -229,17 +229,17 @@ CREATE SEQUENCE public.auth_user_user_permissions_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.auth_user_user_permissions_id_seq OWNER TO postgres;
+ALTER TABLE public.auth_user_user_permissions_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.auth_user_user_permissions_id_seq OWNED BY public.auth_user_user_permissions.id;
 
 
 --
--- Name: authtoken_token; Type: TABLE; Schema: public; Owner: postgres
+-- Name: authtoken_token; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.authtoken_token (
@@ -249,10 +249,10 @@ CREATE TABLE public.authtoken_token (
 );
 
 
-ALTER TABLE public.authtoken_token OWNER TO postgres;
+ALTER TABLE public.authtoken_token OWNER TO rassulkhassen;
 
 --
--- Name: django_admin_log; Type: TABLE; Schema: public; Owner: postgres
+-- Name: django_admin_log; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.django_admin_log (
@@ -268,10 +268,10 @@ CREATE TABLE public.django_admin_log (
 );
 
 
-ALTER TABLE public.django_admin_log OWNER TO postgres;
+ALTER TABLE public.django_admin_log OWNER TO rassulkhassen;
 
 --
--- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.django_admin_log_id_seq
@@ -283,17 +283,17 @@ CREATE SEQUENCE public.django_admin_log_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_admin_log_id_seq OWNER TO postgres;
+ALTER TABLE public.django_admin_log_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.django_admin_log_id_seq OWNED BY public.django_admin_log.id;
 
 
 --
--- Name: django_content_type; Type: TABLE; Schema: public; Owner: postgres
+-- Name: django_content_type; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.django_content_type (
@@ -303,10 +303,10 @@ CREATE TABLE public.django_content_type (
 );
 
 
-ALTER TABLE public.django_content_type OWNER TO postgres;
+ALTER TABLE public.django_content_type OWNER TO rassulkhassen;
 
 --
--- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.django_content_type_id_seq
@@ -318,17 +318,17 @@ CREATE SEQUENCE public.django_content_type_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_content_type_id_seq OWNER TO postgres;
+ALTER TABLE public.django_content_type_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.django_content_type_id_seq OWNED BY public.django_content_type.id;
 
 
 --
--- Name: django_migrations; Type: TABLE; Schema: public; Owner: postgres
+-- Name: django_migrations; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.django_migrations (
@@ -339,10 +339,10 @@ CREATE TABLE public.django_migrations (
 );
 
 
-ALTER TABLE public.django_migrations OWNER TO postgres;
+ALTER TABLE public.django_migrations OWNER TO rassulkhassen;
 
 --
--- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.django_migrations_id_seq
@@ -354,17 +354,17 @@ CREATE SEQUENCE public.django_migrations_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.django_migrations_id_seq OWNER TO postgres;
+ALTER TABLE public.django_migrations_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.django_migrations_id_seq OWNED BY public.django_migrations.id;
 
 
 --
--- Name: django_session; Type: TABLE; Schema: public; Owner: postgres
+-- Name: django_session; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.django_session (
@@ -374,10 +374,10 @@ CREATE TABLE public.django_session (
 );
 
 
-ALTER TABLE public.django_session OWNER TO postgres;
+ALTER TABLE public.django_session OWNER TO rassulkhassen;
 
 --
--- Name: dtree_codeforcestree; Type: TABLE; Schema: public; Owner: postgres
+-- Name: dtree_codeforcestree; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.dtree_codeforcestree (
@@ -395,10 +395,10 @@ CREATE TABLE public.dtree_codeforcestree (
 );
 
 
-ALTER TABLE public.dtree_codeforcestree OWNER TO postgres;
+ALTER TABLE public.dtree_codeforcestree OWNER TO rassulkhassen;
 
 --
--- Name: dtree_codeforcestree_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: dtree_codeforcestree_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.dtree_codeforcestree_id_seq
@@ -410,17 +410,17 @@ CREATE SEQUENCE public.dtree_codeforcestree_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.dtree_codeforcestree_id_seq OWNER TO postgres;
+ALTER TABLE public.dtree_codeforcestree_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: dtree_codeforcestree_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: dtree_codeforcestree_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.dtree_codeforcestree_id_seq OWNED BY public.dtree_codeforcestree.id;
 
 
 --
--- Name: dtree_ruletree; Type: TABLE; Schema: public; Owner: postgres
+-- Name: dtree_ruletree; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.dtree_ruletree (
@@ -438,10 +438,10 @@ CREATE TABLE public.dtree_ruletree (
 );
 
 
-ALTER TABLE public.dtree_ruletree OWNER TO postgres;
+ALTER TABLE public.dtree_ruletree OWNER TO rassulkhassen;
 
 --
--- Name: dtree_ruletree_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: dtree_ruletree_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.dtree_ruletree_id_seq
@@ -453,17 +453,17 @@ CREATE SEQUENCE public.dtree_ruletree_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.dtree_ruletree_id_seq OWNER TO postgres;
+ALTER TABLE public.dtree_ruletree_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: dtree_ruletree_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: dtree_ruletree_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.dtree_ruletree_id_seq OWNED BY public.dtree_ruletree.id;
 
 
 --
--- Name: log_log; Type: TABLE; Schema: public; Owner: postgres
+-- Name: log_log; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.log_log (
@@ -476,10 +476,10 @@ CREATE TABLE public.log_log (
 );
 
 
-ALTER TABLE public.log_log OWNER TO postgres;
+ALTER TABLE public.log_log OWNER TO rassulkhassen;
 
 --
--- Name: log_log_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: log_log_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.log_log_id_seq
@@ -491,17 +491,17 @@ CREATE SEQUENCE public.log_log_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.log_log_id_seq OWNER TO postgres;
+ALTER TABLE public.log_log_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: log_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: log_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.log_log_id_seq OWNED BY public.log_log.id;
 
 
 --
--- Name: mycalendar_dayinfo; Type: TABLE; Schema: public; Owner: postgres
+-- Name: mycalendar_dayinfo; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.mycalendar_dayinfo (
@@ -514,10 +514,10 @@ CREATE TABLE public.mycalendar_dayinfo (
 );
 
 
-ALTER TABLE public.mycalendar_dayinfo OWNER TO postgres;
+ALTER TABLE public.mycalendar_dayinfo OWNER TO rassulkhassen;
 
 --
--- Name: mycalendar_dayinfo_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: mycalendar_dayinfo_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.mycalendar_dayinfo_id_seq
@@ -529,17 +529,17 @@ CREATE SEQUENCE public.mycalendar_dayinfo_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.mycalendar_dayinfo_id_seq OWNER TO postgres;
+ALTER TABLE public.mycalendar_dayinfo_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: mycalendar_dayinfo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: mycalendar_dayinfo_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.mycalendar_dayinfo_id_seq OWNED BY public.mycalendar_dayinfo.id;
 
 
 --
--- Name: people_person; Type: TABLE; Schema: public; Owner: postgres
+-- Name: people_person; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.people_person (
@@ -553,10 +553,10 @@ CREATE TABLE public.people_person (
 );
 
 
-ALTER TABLE public.people_person OWNER TO postgres;
+ALTER TABLE public.people_person OWNER TO rassulkhassen;
 
 --
--- Name: people_person_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: people_person_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.people_person_id_seq
@@ -568,17 +568,17 @@ CREATE SEQUENCE public.people_person_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.people_person_id_seq OWNER TO postgres;
+ALTER TABLE public.people_person_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: people_person_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: people_person_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.people_person_id_seq OWNED BY public.people_person.id;
 
 
 --
--- Name: skills_skill; Type: TABLE; Schema: public; Owner: postgres
+-- Name: skills_skill; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.skills_skill (
@@ -591,10 +591,10 @@ CREATE TABLE public.skills_skill (
 );
 
 
-ALTER TABLE public.skills_skill OWNER TO postgres;
+ALTER TABLE public.skills_skill OWNER TO rassulkhassen;
 
 --
--- Name: skills_skill_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: skills_skill_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.skills_skill_id_seq
@@ -606,17 +606,17 @@ CREATE SEQUENCE public.skills_skill_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.skills_skill_id_seq OWNER TO postgres;
+ALTER TABLE public.skills_skill_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: skills_skill_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: skills_skill_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.skills_skill_id_seq OWNED BY public.skills_skill.id;
 
 
 --
--- Name: values_value; Type: TABLE; Schema: public; Owner: postgres
+-- Name: values_value; Type: TABLE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE TABLE public.values_value (
@@ -627,10 +627,10 @@ CREATE TABLE public.values_value (
 );
 
 
-ALTER TABLE public.values_value OWNER TO postgres;
+ALTER TABLE public.values_value OWNER TO rassulkhassen;
 
 --
--- Name: values_value_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- Name: values_value_id_seq; Type: SEQUENCE; Schema: public; Owner: rassulkhassen
 --
 
 CREATE SEQUENCE public.values_value_id_seq
@@ -642,129 +642,129 @@ CREATE SEQUENCE public.values_value_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.values_value_id_seq OWNER TO postgres;
+ALTER TABLE public.values_value_id_seq OWNER TO rassulkhassen;
 
 --
--- Name: values_value_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: values_value_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: rassulkhassen
 --
 
 ALTER SEQUENCE public.values_value_id_seq OWNED BY public.values_value.id;
 
 
 --
--- Name: auth_group id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: auth_group id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_group ALTER COLUMN id SET DEFAULT nextval('public.auth_group_id_seq'::regclass);
 
 
 --
--- Name: auth_group_permissions id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: auth_group_permissions id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_group_permissions ALTER COLUMN id SET DEFAULT nextval('public.auth_group_permissions_id_seq'::regclass);
 
 
 --
--- Name: auth_permission id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: auth_permission id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_permission ALTER COLUMN id SET DEFAULT nextval('public.auth_permission_id_seq'::regclass);
 
 
 --
--- Name: auth_user id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: auth_user id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user ALTER COLUMN id SET DEFAULT nextval('public.auth_user_id_seq'::regclass);
 
 
 --
--- Name: auth_user_groups id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: auth_user_groups id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user_groups ALTER COLUMN id SET DEFAULT nextval('public.auth_user_groups_id_seq'::regclass);
 
 
 --
--- Name: auth_user_user_permissions id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: auth_user_user_permissions id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions ALTER COLUMN id SET DEFAULT nextval('public.auth_user_user_permissions_id_seq'::regclass);
 
 
 --
--- Name: django_admin_log id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: django_admin_log id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.django_admin_log ALTER COLUMN id SET DEFAULT nextval('public.django_admin_log_id_seq'::regclass);
 
 
 --
--- Name: django_content_type id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: django_content_type id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.django_content_type ALTER COLUMN id SET DEFAULT nextval('public.django_content_type_id_seq'::regclass);
 
 
 --
--- Name: django_migrations id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: django_migrations id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.django_migrations ALTER COLUMN id SET DEFAULT nextval('public.django_migrations_id_seq'::regclass);
 
 
 --
--- Name: dtree_codeforcestree id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: dtree_codeforcestree id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.dtree_codeforcestree ALTER COLUMN id SET DEFAULT nextval('public.dtree_codeforcestree_id_seq'::regclass);
 
 
 --
--- Name: dtree_ruletree id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: dtree_ruletree id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.dtree_ruletree ALTER COLUMN id SET DEFAULT nextval('public.dtree_ruletree_id_seq'::regclass);
 
 
 --
--- Name: log_log id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: log_log id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.log_log ALTER COLUMN id SET DEFAULT nextval('public.log_log_id_seq'::regclass);
 
 
 --
--- Name: mycalendar_dayinfo id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: mycalendar_dayinfo id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.mycalendar_dayinfo ALTER COLUMN id SET DEFAULT nextval('public.mycalendar_dayinfo_id_seq'::regclass);
 
 
 --
--- Name: people_person id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: people_person id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.people_person ALTER COLUMN id SET DEFAULT nextval('public.people_person_id_seq'::regclass);
 
 
 --
--- Name: skills_skill id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: skills_skill id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.skills_skill ALTER COLUMN id SET DEFAULT nextval('public.skills_skill_id_seq'::regclass);
 
 
 --
--- Name: values_value id; Type: DEFAULT; Schema: public; Owner: postgres
+-- Name: values_value id; Type: DEFAULT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.values_value ALTER COLUMN id SET DEFAULT nextval('public.values_value_id_seq'::regclass);
 
 
 --
--- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.auth_group (id, name) FROM stdin;
@@ -772,7 +772,7 @@ COPY public.auth_group (id, name) FROM stdin;
 
 
 --
--- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.auth_group_permissions (id, group_id, permission_id) FROM stdin;
@@ -780,85 +780,80 @@ COPY public.auth_group_permissions (id, group_id, permission_id) FROM stdin;
 
 
 --
--- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
-37	Can add log entry	10	add_logentry
-38	Can change log entry	10	change_logentry
-39	Can delete log entry	10	delete_logentry
-40	Can view log entry	10	view_logentry
-41	Can add permission	11	add_permission
-42	Can change permission	11	change_permission
-43	Can delete permission	11	delete_permission
-44	Can view permission	11	view_permission
-45	Can add group	12	add_group
-46	Can change group	12	change_group
-47	Can delete group	12	delete_group
-48	Can view group	12	view_group
-49	Can add user	13	add_user
-50	Can change user	13	change_user
-51	Can delete user	13	delete_user
-52	Can view user	13	view_user
-53	Can add content type	14	add_contenttype
-54	Can change content type	14	change_contenttype
-55	Can delete content type	14	delete_contenttype
-56	Can view content type	14	view_contenttype
-57	Can add session	15	add_session
-58	Can change session	15	change_session
-59	Can delete session	15	delete_session
-60	Can view session	15	view_session
-61	Can add Token	16	add_token
-62	Can change Token	16	change_token
-63	Can delete Token	16	delete_token
-64	Can view Token	16	view_token
-65	Can add log	17	add_log
-66	Can change log	17	change_log
-67	Can delete log	17	delete_log
-68	Can view log	17	view_log
-69	Can add day info	18	add_dayinfo
-70	Can change day info	18	change_dayinfo
-71	Can delete day info	18	delete_dayinfo
-72	Can view day info	18	view_dayinfo
-73	Can add person	19	add_person
-74	Can change person	19	change_person
-75	Can delete person	19	delete_person
-76	Can view person	19	view_person
-77	Can add value	20	add_value
-78	Can change value	20	change_value
-79	Can delete value	20	delete_value
-80	Can view value	20	view_value
-81	Can add rule tree	21	add_ruletree
-82	Can change rule tree	21	change_ruletree
-83	Can delete rule tree	21	delete_ruletree
-84	Can view rule tree	21	view_ruletree
-85	Can add codeforces tree	22	add_codeforcestree
-86	Can change codeforces tree	22	change_codeforcestree
-87	Can delete codeforces tree	22	delete_codeforcestree
-88	Can view codeforces tree	22	view_codeforcestree
-89	Can add rule tree	23	add_ruletree
-90	Can change rule tree	23	change_ruletree
-91	Can delete rule tree	23	delete_ruletree
-92	Can view rule tree	23	view_ruletree
-93	Can add skill	24	add_skill
-94	Can change skill	24	change_skill
-95	Can delete skill	24	delete_skill
-96	Can view skill	24	view_skill
+1	Can add log entry	1	add_logentry
+2	Can change log entry	1	change_logentry
+3	Can delete log entry	1	delete_logentry
+4	Can view log entry	1	view_logentry
+5	Can add permission	2	add_permission
+6	Can change permission	2	change_permission
+7	Can delete permission	2	delete_permission
+8	Can view permission	2	view_permission
+9	Can add group	3	add_group
+10	Can change group	3	change_group
+11	Can delete group	3	delete_group
+12	Can view group	3	view_group
+13	Can add user	4	add_user
+14	Can change user	4	change_user
+15	Can delete user	4	delete_user
+16	Can view user	4	view_user
+17	Can add content type	5	add_contenttype
+18	Can change content type	5	change_contenttype
+19	Can delete content type	5	delete_contenttype
+20	Can view content type	5	view_contenttype
+21	Can add session	6	add_session
+22	Can change session	6	change_session
+23	Can delete session	6	delete_session
+24	Can view session	6	view_session
+25	Can add Token	7	add_token
+26	Can change Token	7	change_token
+27	Can delete Token	7	delete_token
+28	Can view Token	7	view_token
+29	Can add log	8	add_log
+30	Can change log	8	change_log
+31	Can delete log	8	delete_log
+32	Can view log	8	view_log
+33	Can add day info	9	add_dayinfo
+34	Can change day info	9	change_dayinfo
+35	Can delete day info	9	delete_dayinfo
+36	Can view day info	9	view_dayinfo
+37	Can add person	10	add_person
+38	Can change person	10	change_person
+39	Can delete person	10	delete_person
+40	Can view person	10	view_person
+41	Can add value	11	add_value
+42	Can change value	11	change_value
+43	Can delete value	11	delete_value
+44	Can view value	11	view_value
+45	Can add codeforces tree	12	add_codeforcestree
+46	Can change codeforces tree	12	change_codeforcestree
+47	Can delete codeforces tree	12	delete_codeforcestree
+48	Can view codeforces tree	12	view_codeforcestree
+49	Can add rule tree	13	add_ruletree
+50	Can change rule tree	13	change_ruletree
+51	Can delete rule tree	13	delete_ruletree
+52	Can view rule tree	13	view_ruletree
+53	Can add skill	14	add_skill
+54	Can change skill	14	change_skill
+55	Can delete skill	14	delete_skill
+56	Can view skill	14	view_skill
 \.
 
 
 --
--- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
-1	pbkdf2_sha256$180000$4iHGAgN7fYlB$T3OXqS6NpWB8e8GvY5ZLC01GkYBTbwE/bs6myOvJ/Lo=	2019-12-30 21:42:25.847594+06	t	imadra			rasul.hasen@gmail.com	t	t	2019-12-30 21:42:19.518399+06
-2	pbkdf2_sha256$180000$OEdpR52XJHR9$F10NgtJ5DRv//AjXGr6DxYxtACVhCDqcraMHq43sucA=	\N	f	rasul.hasen@gmail.com	Rassul	Khassen	rasul.hasen@gmail.com	f	t	2019-12-30 21:47:41.419386+06
+1	pbkdf2_sha256$180000$AUzdPbGCUR43$hH2T8Q4yeuMJ/jToKnY0hOCNVnJ8hu9sI/m4kwAvfVw=	2020-01-12 22:01:38.76385+06	t	imadra			rasul.hasen@gmail.com	t	t	2020-01-12 22:01:25.870972+06
 \.
 
 
 --
--- Data for Name: auth_user_groups; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: auth_user_groups; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.auth_user_groups (id, user_id, group_id) FROM stdin;
@@ -866,7 +861,7 @@ COPY public.auth_user_groups (id, user_id, group_id) FROM stdin;
 
 
 --
--- Data for Name: auth_user_user_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: auth_user_user_permissions; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
@@ -874,394 +869,272 @@ COPY public.auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
 
 
 --
--- Data for Name: authtoken_token; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: authtoken_token; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.authtoken_token (key, created, user_id) FROM stdin;
-3e53bffd1eb52f207083c683a3dd9e46c254782a	2019-12-30 21:42:19.74671+06	1
-3f3d3608abae22e9c749d057ad989c6fe00e4214	2019-12-30 21:47:41.654653+06	2
+5e694f2c7b1a5b8f438d31b7440f784babf6eb48	2020-01-12 22:01:25.972645+06	1
 \.
 
 
 --
--- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.django_admin_log (id, action_time, object_id, object_repr, action_flag, change_message, content_type_id, user_id) FROM stdin;
-1	2019-12-30 23:27:57.217898+06	1	1	1	[{"added": {}}]	18	1
-2	2020-01-03 21:01:50.93859+06	1	1	1	[{"added": {}}]	19	1
-3	2020-01-03 21:06:36.098771+06	1	1	2	[{"changed": {"fields": ["Img"]}}]	19	1
-4	2020-01-03 22:35:01.677431+06	1	1	1	[{"added": {}}]	20	1
-5	2020-01-04 00:02:47.874063+06	1	<RuleTree: Root>	1	[{"added": {}}]	21	1
-6	2020-01-04 00:03:11.705653+06	2	<RuleTree: Child 1>	1	[{"added": {}}]	21	1
-7	2020-01-04 00:03:19.384686+06	3	<RuleTree: Child 2>	1	[{"added": {}}]	21	1
-8	2020-01-04 00:03:26.165613+06	4	<RuleTree: Child 3>	1	[{"added": {}}]	21	1
-9	2020-01-04 12:53:57.469649+06	5	<RuleTree: Child 4>	1	[{"added": {}}]	21	1
-10	2020-01-04 12:54:29.325208+06	6	<RuleTree: Child 5>	1	[{"added": {}}]	21	1
-11	2020-01-04 12:54:54.271504+06	7	<RuleTree: Chi6>	1	[{"added": {}}]	21	1
-12	2020-01-04 12:55:06.392461+06	7	<RuleTree: Child 6>	2	[{"changed": {"fields": ["Name", "Parent"]}}]	21	1
-13	2020-01-04 14:59:28.839937+06	1	<CodeforcesTree: 1>	1	[{"added": {}}]	22	1
-14	2020-01-04 15:06:13.437894+06	1	<RuleTree: 1>	1	[{"added": {}}]	23	1
-15	2020-01-04 15:06:27.612043+06	1	<CodeforcesTree: 1>	2	[{"changed": {"fields": ["Name"]}}]	22	1
-16	2020-01-04 21:30:46.290019+06	7	<CodeforcesTree: 7>	3		22	1
-17	2020-01-04 21:31:03.558822+06	6	<CodeforcesTree: 6>	2	[{"changed": {"fields": ["Name"]}}]	22	1
-18	2020-01-07 17:42:45.424924+06	37	37	3		24	1
-19	2020-01-07 17:42:45.450771+06	36	36	3		24	1
-20	2020-01-07 17:42:45.451774+06	35	35	3		24	1
-21	2020-01-07 17:42:45.453437+06	34	34	3		24	1
-22	2020-01-07 17:42:45.454564+06	33	33	3		24	1
-23	2020-01-07 17:42:45.455594+06	32	32	3		24	1
-24	2020-01-07 17:42:45.456613+06	31	31	3		24	1
-25	2020-01-07 17:42:45.457617+06	30	30	3		24	1
-26	2020-01-07 17:42:45.457617+06	29	29	3		24	1
-27	2020-01-07 17:42:45.45929+06	28	28	3		24	1
-28	2020-01-07 17:42:45.460295+06	27	27	3		24	1
-29	2020-01-07 17:42:45.461296+06	26	26	3		24	1
-30	2020-01-07 17:42:45.462292+06	25	25	3		24	1
-31	2020-01-07 17:42:45.463928+06	24	24	3		24	1
-32	2020-01-07 17:42:45.4651+06	23	23	3		24	1
-33	2020-01-07 17:42:45.466108+06	22	22	3		24	1
-34	2020-01-07 17:42:45.467073+06	21	21	3		24	1
-35	2020-01-07 17:42:45.468076+06	20	20	3		24	1
-36	2020-01-07 17:42:45.469294+06	19	19	3		24	1
-37	2020-01-07 17:42:45.47032+06	18	18	3		24	1
-38	2020-01-07 17:42:45.471303+06	17	17	3		24	1
-39	2020-01-07 17:42:45.472264+06	16	16	3		24	1
-40	2020-01-07 17:42:45.473267+06	15	15	3		24	1
-41	2020-01-07 17:42:45.474267+06	14	14	3		24	1
-42	2020-01-07 17:42:45.475167+06	13	13	3		24	1
-43	2020-01-07 17:42:45.476129+06	12	12	3		24	1
-44	2020-01-07 17:42:45.477106+06	11	11	3		24	1
-45	2020-01-07 17:42:45.478108+06	10	10	3		24	1
-46	2020-01-07 17:42:45.479108+06	9	9	3		24	1
-47	2020-01-07 17:42:45.481109+06	8	8	3		24	1
-48	2020-01-07 17:42:45.482561+06	7	7	3		24	1
-49	2020-01-07 17:42:45.48379+06	6	6	3		24	1
-50	2020-01-07 17:42:45.484882+06	5	5	3		24	1
-51	2020-01-07 17:42:45.485979+06	4	4	3		24	1
-52	2020-01-07 17:42:55.384709+06	3	3	3		24	1
-53	2020-01-07 17:44:40.233777+06	42	42	3		24	1
-54	2020-01-07 17:44:40.237777+06	41	41	3		24	1
-55	2020-01-07 17:44:40.239779+06	40	40	3		24	1
-56	2020-01-07 17:44:40.240776+06	39	39	3		24	1
-57	2020-01-07 17:44:40.241783+06	38	38	3		24	1
 \.
 
 
 --
--- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.django_content_type (id, app_label, model) FROM stdin;
-10	admin	logentry
-11	auth	permission
-12	auth	group
-13	auth	user
-14	contenttypes	contenttype
-15	sessions	session
-16	authtoken	token
-17	log	log
-18	mycalendar	dayinfo
-19	people	person
-20	values	value
-21	rules	ruletree
-22	dtree	codeforcestree
-23	dtree	ruletree
-24	skills	skill
+1	admin	logentry
+2	auth	permission
+3	auth	group
+4	auth	user
+5	contenttypes	contenttype
+6	sessions	session
+7	authtoken	token
+8	log	log
+9	mycalendar	dayinfo
+10	people	person
+11	values	value
+12	dtree	codeforcestree
+13	dtree	ruletree
+14	skills	skill
 \.
 
 
 --
--- Data for Name: django_migrations; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: django_migrations; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.django_migrations (id, app, name, applied) FROM stdin;
-1	contenttypes	0001_initial	2019-12-30 21:39:35.910697+06
-2	auth	0001_initial	2019-12-30 21:39:36.451009+06
-3	admin	0001_initial	2019-12-30 21:39:37.575811+06
-4	admin	0002_logentry_remove_auto_add	2019-12-30 21:39:37.740101+06
-5	admin	0003_logentry_add_action_flag_choices	2019-12-30 21:39:37.749353+06
-6	contenttypes	0002_remove_content_type_name	2019-12-30 21:39:37.771333+06
-7	auth	0002_alter_permission_name_max_length	2019-12-30 21:39:37.779349+06
-8	auth	0003_alter_user_email_max_length	2019-12-30 21:39:37.790347+06
-9	auth	0004_alter_user_username_opts	2019-12-30 21:39:37.800326+06
-10	auth	0005_alter_user_last_login_null	2019-12-30 21:39:37.811043+06
-11	auth	0006_require_contenttypes_0002	2019-12-30 21:39:37.814069+06
-12	auth	0007_alter_validators_add_error_messages	2019-12-30 21:39:37.824344+06
-13	auth	0008_alter_user_username_max_length	2019-12-30 21:39:37.907475+06
-14	auth	0009_alter_user_last_name_max_length	2019-12-30 21:39:37.918936+06
-15	auth	0010_alter_group_name_max_length	2019-12-30 21:39:37.931308+06
-16	auth	0011_update_proxy_permissions	2019-12-30 21:39:37.941436+06
-17	authtoken	0001_initial	2019-12-30 21:39:38.062426+06
-18	authtoken	0002_auto_20160226_1747	2019-12-30 21:39:38.159786+06
-19	log	0001_initial	2019-12-30 21:39:38.362528+06
-20	log	0002_auto_20191228_2359	2019-12-30 21:39:38.672035+06
-21	log	0003_auto_20191229_0002	2019-12-30 21:39:38.682991+06
-22	log	0004_auto_20191229_0003	2019-12-30 21:39:38.689921+06
-23	log	0006_auto_20191229_0019	2019-12-30 21:40:30.786067+06
-24	log	0007_auto_20191229_0024	2019-12-30 21:40:30.793335+06
-25	log	0008_auto_20191229_0033	2019-12-30 21:40:30.800315+06
-26	log	0009_auto_20191229_0042	2019-12-30 21:40:30.805038+06
-27	mycalendar	0001_initial	2019-12-30 21:40:30.889285+06
-28	sessions	0001_initial	2019-12-30 21:40:31.010193+06
-29	log	0010_auto_20191230_2144	2019-12-30 21:44:21.95457+06
-30	mycalendar	0002_auto_20191230_2255	2019-12-30 22:56:02.062614+06
-31	mycalendar	0003_remove_dayinfo_thoughts	2019-12-30 22:58:36.731533+06
-32	people	0001_initial	2020-01-03 20:58:06.443073+06
-33	people	0002_person_img	2020-01-03 21:06:09.291799+06
-34	people	0003_auto_20200103_2106	2020-01-03 21:06:09.307374+06
-35	values	0001_initial	2020-01-03 22:27:59.81457+06
-36	values	0002_value_value_type	2020-01-03 22:33:28.579882+06
-39	dtree	0001_initial	2020-01-04 14:51:15.368723+06
-40	dtree	0002_ruletree	2020-01-04 15:05:55.529557+06
-41	log	0011_auto_20200104_1532	2020-01-04 15:32:53.309145+06
-42	skills	0001_initial	2020-01-07 16:39:57.19095+06
-43	skills	0002_auto_20200107_1743	2020-01-07 17:43:58.258332+06
+1	contenttypes	0001_initial	2020-01-12 21:15:35.376032+06
+2	auth	0001_initial	2020-01-12 21:15:35.407644+06
+3	admin	0001_initial	2020-01-12 21:15:35.438979+06
+4	admin	0002_logentry_remove_auto_add	2020-01-12 21:15:35.450327+06
+5	admin	0003_logentry_add_action_flag_choices	2020-01-12 21:15:35.457131+06
+6	contenttypes	0002_remove_content_type_name	2020-01-12 21:15:35.474782+06
+7	auth	0002_alter_permission_name_max_length	2020-01-12 21:15:35.479396+06
+8	auth	0003_alter_user_email_max_length	2020-01-12 21:15:35.488752+06
+9	auth	0004_alter_user_username_opts	2020-01-12 21:15:35.495569+06
+10	auth	0005_alter_user_last_login_null	2020-01-12 21:15:35.502597+06
+11	auth	0006_require_contenttypes_0002	2020-01-12 21:15:35.504181+06
+12	auth	0007_alter_validators_add_error_messages	2020-01-12 21:15:35.511379+06
+13	auth	0008_alter_user_username_max_length	2020-01-12 21:15:35.52235+06
+14	auth	0009_alter_user_last_name_max_length	2020-01-12 21:15:35.529704+06
+15	auth	0010_alter_group_name_max_length	2020-01-12 21:15:35.537357+06
+16	auth	0011_update_proxy_permissions	2020-01-12 21:15:35.544813+06
+17	authtoken	0001_initial	2020-01-12 21:15:35.55525+06
+18	authtoken	0002_auto_20160226_1747	2020-01-12 21:15:35.59552+06
+19	dtree	0001_initial	2020-01-12 21:15:35.601144+06
+20	dtree	0002_ruletree	2020-01-12 21:15:35.610376+06
+21	log	0001_initial	2020-01-12 21:15:35.618255+06
+22	log	0002_auto_20191228_2359	2020-01-12 21:15:35.65683+06
+23	log	0003_auto_20191229_0002	2020-01-12 21:15:35.662244+06
+24	log	0004_auto_20191229_0003	2020-01-12 21:15:35.666401+06
+25	log	0006_auto_20191229_0019	2020-01-12 21:15:35.670774+06
+26	log	0007_auto_20191229_0024	2020-01-12 21:15:35.675108+06
+27	log	0008_auto_20191229_0033	2020-01-12 21:15:35.67985+06
+28	log	0009_auto_20191229_0042	2020-01-12 21:15:35.683029+06
+29	log	0010_auto_20191230_2144	2020-01-12 21:15:35.686206+06
+30	log	0011_auto_20200104_1532	2020-01-12 21:15:35.690094+06
+31	mycalendar	0001_initial	2020-01-12 21:15:35.694596+06
+32	mycalendar	0002_auto_20191230_2255	2020-01-12 21:15:35.704012+06
+33	mycalendar	0003_remove_dayinfo_thoughts	2020-01-12 21:15:35.708543+06
+34	people	0001_initial	2020-01-12 21:15:35.712557+06
+35	people	0002_person_img	2020-01-12 21:15:35.715979+06
+36	people	0003_auto_20200103_2106	2020-01-12 21:15:35.718636+06
+37	sessions	0001_initial	2020-01-12 21:15:35.723487+06
+38	skills	0001_initial	2020-01-12 21:15:35.730591+06
+39	skills	0002_auto_20200107_1743	2020-01-12 21:15:35.736471+06
+40	values	0001_initial	2020-01-12 21:15:35.74082+06
+41	values	0002_value_value_type	2020-01-12 21:15:35.744534+06
 \.
 
 
 --
--- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
-bbn4d1lud696sghe0mxmbrn1lcuwotx4	YWRjMGI3MmYwNmRlMjFlYmNiMmYwNzIxOTVmZjZhYzMzNzM5NDc0ZDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI4ODZjMTFmMDZkY2ZkNGU5NjhiMzlmYjQxMzMwODIwMGJkNzI5NWIyIn0=	2020-01-13 21:42:25.849616+06
+trzzhb4z82rav0kdhcl3q0glakd7w2xz	OTdjYjAxYWY0Y2VlODg1ODViODAzZTFhNTZhYTRiNGQwYjgzMTQyZDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0NGI1MDQ4OGYzZTU5ZmFiMjE4N2I3N2Y1MTBlOTkwMjA1ZjMwNWVlIn0=	2020-01-26 22:01:38.766029+06
 \.
 
 
 --
--- Data for Name: dtree_codeforcestree; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: dtree_codeforcestree; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.dtree_codeforcestree (id, name, lft, rght, tree_id, level, parent_id) FROM stdin;
-23	Understand opimality & solve	43	44	1	2	22
-1	Problem case	1	48	1	0	\N
-22	Fill gaps in array	42	47	1	1	1
-24	DP	45	46	1	2	22
-2	Divide into 2 groups	2	5	1	1	1
-3	Select subset with property	6	9	1	1	1
-4	Xor	10	17	1	1	1
-5	Generating answer	11	12	1	2	4
-8	Find maximum matching prefix	18	21	1	1	1
-9	Pigeonhole principle	19	20	1	2	8
-10	Construct graph and find cycle	7	8	1	2	3
-11	Observe evenness of elements	3	4	1	2	2
-6	a^a=0, a^0=a	13	14	1	2	4
-12	Ranges and intersections	22	29	1	1	1
-13	Scanline	23	28	1	2	12
-14	Calculate # of segments(l, r) in all permutations	30	33	1	1	1
-15	Fix l, r and count # permutations	31	32	1	2	14
-17	Can you color with dominos?	35	36	1	2	16
-16	Domino Problem	34	41	1	1	1
-18	Maximum number of dominos to place	37	40	1	2	16
-19	Count number of black and white cells	38	39	1	3	18
 \.
 
 
 --
--- Data for Name: dtree_ruletree; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: dtree_ruletree; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.dtree_ruletree (id, name, lft, rght, tree_id, level, parent_id) FROM stdin;
-2	Facing agression	2	3	1	1	1
-3	Facing non-agressive insult	4	7	1	1	1
-4	Felling comparison	8	9	1	1	1
-5	Feeling worried	10	17	1	1	1
-11	About Ali/Shara/Daryn	19	20	1	2	10
-12	About finishing University	21	22	1	2	10
-1	Life case	1	26	1	0	\N
-10	Facing handra	18	25	1	1	1
 \.
 
 
 --
--- Data for Name: log_log; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: log_log; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.log_log (id, text, "time", category, date, important) FROM stdin;
-1	All data was lost after switching to postgres sql database management system. So let's start again!	15:48:46.792566	O	2019-12-30	f
-2	Ohuyenno!	15:48:57.577064	O	2019-12-30	f
-3	Yesterday was a huge day for thoughs.\nI will not write much about the thoughts, cause I forgot most of the things. In addition, I am too lazy for that.\nI just took the thought that every person is an asshole and tranferred it to the next level. I really hope that I will not loose my database anymore.\nSo, the world is bunch of assholes trying to fulfil one goal: to satisfy wishes of their emotional brains.\nThe bad thing is emotional brain is a very bad bad thing. People always cover him with the words like love, family etc. But the reality is that emotional brain is terrible. The only good thing about the emotional brain is that it has morality. \nSo, there is an unanswering global question that always comes: What to do with the life which does not have any purpose or meaning and consists of hotelok who always try to fulfil them. And noone understands that there is no meaning in these hotelkas. And noone gets that their hotelkas are the worst things: cause they are causing wars between each of them. \nOne answer that comes to mind: there is nothing left to do but to be like everyone: fulfil my hotelka. I suppose that I can succesfully do that with the help of my knowledge(habits/exponentialism, decision trees, programming(machine learning, lifetracker), markmanson(reducing the wishlist/minimalism, reconstructuring values, aiming for long-term), knowing-that-people-are-bad). 	13:42:58.797304	DS	2020-01-02	t
-5	I am really happy that I could draw and store decision trees	09:20:38.293038	HP	2020-01-04	f
-6	Fuck timezone does not work	09:22:37.493045	DS	2020-01-04	f
-7	I changed timezone in settings.py	09:26:39.662606	O	2020-01-04	f
-11	What happens now?	15:33:06.630992	O	2020-01-04	f
-13	3 days until going out from this toxicant place & to start the last semester of my life(I hope)	13:34:24.908137	O	2020-01-06	f
-14	Happy about the best Sansation font :)	23:34:34.733185	HP	2020-01-06	f
-15	I noticed that there are no depressive logs so I will cover previous ones here. The most depressive thing that I feel is handra. And in the last times there are 2 sources out there: 4:20 not letting me play football and showing my fears of being beaten, finishing my University/community-life. Another thing which actually does not give me handra, but constantly pushing my awarenesses: errectial disfuntion.	00:02:28.91921	DP	2020-01-08	f
-16	By the way, I searched and found that errectial disfunction is very studied thing, so that gave me a HOPE. My next step is to see doctor approximately in July/August. I hope that this will happen in Moscow. Another thing to do is to try to improve my functionality with national methods. Sorry Dana :)	00:05:07.608358	HP	2020-01-08	f
 \.
 
 
 --
--- Data for Name: mycalendar_dayinfo; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: mycalendar_dayinfo; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.mycalendar_dayinfo (id, year, month, day, mood, note) FROM stdin;
-1	2019	11	30	D	Testing depressive
-2	2020	0	30	H	Testing happy
-3	2020	0	5	N	I am sitting at Home and in a few days I'm coming back to NU for my last semester
-4	0	0	0	N	
-5	1945	4	9	H	I guess this was good day
-7	2020	0	11	N	
-6	2020	0	10	N	a
-8	2020	0	7	N	
-9	2020	0	18	N	
 \.
 
 
 --
--- Data for Name: people_person; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: people_person; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.people_person (id, name, commentary, strengths, weaknesses, happyness, img) FROM stdin;
-1	Chandler Bing	The funniest guy on the planet	No dependence on society	Can't stand for himself	100	images/chandler.jpg
 \.
 
 
 --
--- Data for Name: skills_skill; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: skills_skill; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.skills_skill (id, name, importance, field, commentary, comprehense) FROM stdin;
-43	CS1	30	Basics	-	100
-44	Data Structures	95	CS2	Need to complete Leetcode link	80
-45	Low level CS	90	Computer Systems and Organization	Need to understand all compiling/interpreting/executing stages of programming	70
-46	Database management systems	95	Database management systems	Need to solve leetcode and understand their low level management	80
-47	Computer Networks	95	Computer Networks	Need to comprehense Google course and research more for fixation	70
-50	Operating Systems	95	Operating Systems	-	70
-51	Machine Learning	80	Data Mining and Decision Support	Solve Kaggle and play with open databases	80
-52	C++	80	Programming Languages	Need to understand templating/classes/references	80
-53	Python	90	Programming Languages	Understand how it is built upon objects and hence the difference from other languages	95
-54	Software Engineering	85	Software Engineering	Understand patterns and their application on modern development	85
-55	Algorithms	90	Algorithms, Complexity and Computability	May review complexity and computability	97
 \.
 
 
 --
--- Data for Name: values_value; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: values_value; Type: TABLE DATA; Schema: public; Owner: rassulkhassen
 --
 
 COPY public.values_value (id, name, importance, value_type) FROM stdin;
-1	Being honest	70	G
-5	Being liked	95	B
 \.
 
 
 --
--- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
 --
 
 SELECT pg_catalog.setval('public.auth_group_id_seq', 1, false);
 
 
 --
--- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
 --
 
 SELECT pg_catalog.setval('public.auth_group_permissions_id_seq', 1, false);
 
 
 --
--- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
 --
 
-SELECT pg_catalog.setval('public.auth_permission_id_seq', 96, true);
+SELECT pg_catalog.setval('public.auth_permission_id_seq', 56, true);
 
 
 --
--- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
 --
 
 SELECT pg_catalog.setval('public.auth_user_groups_id_seq', 1, false);
 
 
 --
--- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
 --
 
-SELECT pg_catalog.setval('public.auth_user_id_seq', 2, true);
+SELECT pg_catalog.setval('public.auth_user_id_seq', 1, true);
 
 
 --
--- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
 --
 
 SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 
 
 --
--- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
 --
 
-SELECT pg_catalog.setval('public.django_admin_log_id_seq', 57, true);
-
-
---
--- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.django_content_type_id_seq', 24, true);
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 1, false);
 
 
 --
--- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
 --
 
-SELECT pg_catalog.setval('public.django_migrations_id_seq', 43, true);
-
-
---
--- Name: dtree_codeforcestree_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.dtree_codeforcestree_id_seq', 24, true);
+SELECT pg_catalog.setval('public.django_content_type_id_seq', 14, true);
 
 
 --
--- Name: dtree_ruletree_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
 --
 
-SELECT pg_catalog.setval('public.dtree_ruletree_id_seq', 13, true);
-
-
---
--- Name: log_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.log_log_id_seq', 16, true);
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 41, true);
 
 
 --
--- Name: mycalendar_dayinfo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: dtree_codeforcestree_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
 --
 
-SELECT pg_catalog.setval('public.mycalendar_dayinfo_id_seq', 9, true);
-
-
---
--- Name: people_person_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.people_person_id_seq', 15, true);
+SELECT pg_catalog.setval('public.dtree_codeforcestree_id_seq', 1, false);
 
 
 --
--- Name: skills_skill_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: dtree_ruletree_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
 --
 
-SELECT pg_catalog.setval('public.skills_skill_id_seq', 55, true);
-
-
---
--- Name: values_value_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.values_value_id_seq', 6, true);
+SELECT pg_catalog.setval('public.dtree_ruletree_id_seq', 1, false);
 
 
 --
--- Name: auth_group auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: log_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
+--
+
+SELECT pg_catalog.setval('public.log_log_id_seq', 1, false);
+
+
+--
+-- Name: mycalendar_dayinfo_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
+--
+
+SELECT pg_catalog.setval('public.mycalendar_dayinfo_id_seq', 1, false);
+
+
+--
+-- Name: people_person_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
+--
+
+SELECT pg_catalog.setval('public.people_person_id_seq', 1, false);
+
+
+--
+-- Name: skills_skill_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
+--
+
+SELECT pg_catalog.setval('public.skills_skill_id_seq', 1, false);
+
+
+--
+-- Name: values_value_id_seq; Type: SEQUENCE SET; Schema: public; Owner: rassulkhassen
+--
+
+SELECT pg_catalog.setval('public.values_value_id_seq', 1, false);
+
+
+--
+-- Name: auth_group auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_group
@@ -1269,7 +1142,7 @@ ALTER TABLE ONLY public.auth_group
 
 
 --
--- Name: auth_group_permissions auth_group_permissions_group_id_permission_id_0cd325b0_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_group_permissions auth_group_permissions_group_id_permission_id_0cd325b0_uniq; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -1277,7 +1150,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 
 --
--- Name: auth_group_permissions auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_group_permissions auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -1285,7 +1158,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 
 --
--- Name: auth_group auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_group auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_group
@@ -1293,7 +1166,7 @@ ALTER TABLE ONLY public.auth_group
 
 
 --
--- Name: auth_permission auth_permission_content_type_id_codename_01ab375a_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_permission auth_permission_content_type_id_codename_01ab375a_uniq; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_permission
@@ -1301,7 +1174,7 @@ ALTER TABLE ONLY public.auth_permission
 
 
 --
--- Name: auth_permission auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_permission auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_permission
@@ -1309,7 +1182,7 @@ ALTER TABLE ONLY public.auth_permission
 
 
 --
--- Name: auth_user_groups auth_user_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_user_groups auth_user_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user_groups
@@ -1317,7 +1190,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 
 --
--- Name: auth_user_groups auth_user_groups_user_id_group_id_94350c0c_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_user_groups auth_user_groups_user_id_group_id_94350c0c_uniq; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user_groups
@@ -1325,7 +1198,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 
 --
--- Name: auth_user auth_user_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_user auth_user_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user
@@ -1333,7 +1206,7 @@ ALTER TABLE ONLY public.auth_user
 
 
 --
--- Name: auth_user_user_permissions auth_user_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_user_user_permissions auth_user_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions
@@ -1341,7 +1214,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 
 --
--- Name: auth_user_user_permissions auth_user_user_permissions_user_id_permission_id_14a6b632_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_user_user_permissions auth_user_user_permissions_user_id_permission_id_14a6b632_uniq; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions
@@ -1349,7 +1222,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 
 --
--- Name: auth_user auth_user_username_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_user auth_user_username_key; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user
@@ -1357,7 +1230,7 @@ ALTER TABLE ONLY public.auth_user
 
 
 --
--- Name: authtoken_token authtoken_token_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: authtoken_token authtoken_token_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.authtoken_token
@@ -1365,7 +1238,7 @@ ALTER TABLE ONLY public.authtoken_token
 
 
 --
--- Name: authtoken_token authtoken_token_user_id_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: authtoken_token authtoken_token_user_id_key; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.authtoken_token
@@ -1373,7 +1246,7 @@ ALTER TABLE ONLY public.authtoken_token
 
 
 --
--- Name: django_admin_log django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: django_admin_log django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.django_admin_log
@@ -1381,7 +1254,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 
 --
--- Name: django_content_type django_content_type_app_label_model_76bd3d3b_uniq; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: django_content_type django_content_type_app_label_model_76bd3d3b_uniq; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.django_content_type
@@ -1389,7 +1262,7 @@ ALTER TABLE ONLY public.django_content_type
 
 
 --
--- Name: django_content_type django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: django_content_type django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.django_content_type
@@ -1397,7 +1270,7 @@ ALTER TABLE ONLY public.django_content_type
 
 
 --
--- Name: django_migrations django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: django_migrations django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.django_migrations
@@ -1405,7 +1278,7 @@ ALTER TABLE ONLY public.django_migrations
 
 
 --
--- Name: django_session django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: django_session django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.django_session
@@ -1413,7 +1286,7 @@ ALTER TABLE ONLY public.django_session
 
 
 --
--- Name: dtree_codeforcestree dtree_codeforcestree_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: dtree_codeforcestree dtree_codeforcestree_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.dtree_codeforcestree
@@ -1421,7 +1294,7 @@ ALTER TABLE ONLY public.dtree_codeforcestree
 
 
 --
--- Name: dtree_ruletree dtree_ruletree_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: dtree_ruletree dtree_ruletree_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.dtree_ruletree
@@ -1429,7 +1302,7 @@ ALTER TABLE ONLY public.dtree_ruletree
 
 
 --
--- Name: log_log log_log_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: log_log log_log_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.log_log
@@ -1437,7 +1310,7 @@ ALTER TABLE ONLY public.log_log
 
 
 --
--- Name: mycalendar_dayinfo mycalendar_dayinfo_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: mycalendar_dayinfo mycalendar_dayinfo_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.mycalendar_dayinfo
@@ -1445,7 +1318,7 @@ ALTER TABLE ONLY public.mycalendar_dayinfo
 
 
 --
--- Name: people_person people_person_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: people_person people_person_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.people_person
@@ -1453,7 +1326,7 @@ ALTER TABLE ONLY public.people_person
 
 
 --
--- Name: skills_skill skills_skill_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: skills_skill skills_skill_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.skills_skill
@@ -1461,7 +1334,7 @@ ALTER TABLE ONLY public.skills_skill
 
 
 --
--- Name: values_value values_value_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- Name: values_value values_value_pkey; Type: CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.values_value
@@ -1469,133 +1342,133 @@ ALTER TABLE ONLY public.values_value
 
 
 --
--- Name: auth_group_name_a6ea08ec_like; Type: INDEX; Schema: public; Owner: postgres
+-- Name: auth_group_name_a6ea08ec_like; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX auth_group_name_a6ea08ec_like ON public.auth_group USING btree (name varchar_pattern_ops);
 
 
 --
--- Name: auth_group_permissions_group_id_b120cbf9; Type: INDEX; Schema: public; Owner: postgres
+-- Name: auth_group_permissions_group_id_b120cbf9; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX auth_group_permissions_group_id_b120cbf9 ON public.auth_group_permissions USING btree (group_id);
 
 
 --
--- Name: auth_group_permissions_permission_id_84c5c92e; Type: INDEX; Schema: public; Owner: postgres
+-- Name: auth_group_permissions_permission_id_84c5c92e; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX auth_group_permissions_permission_id_84c5c92e ON public.auth_group_permissions USING btree (permission_id);
 
 
 --
--- Name: auth_permission_content_type_id_2f476e4b; Type: INDEX; Schema: public; Owner: postgres
+-- Name: auth_permission_content_type_id_2f476e4b; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX auth_permission_content_type_id_2f476e4b ON public.auth_permission USING btree (content_type_id);
 
 
 --
--- Name: auth_user_groups_group_id_97559544; Type: INDEX; Schema: public; Owner: postgres
+-- Name: auth_user_groups_group_id_97559544; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX auth_user_groups_group_id_97559544 ON public.auth_user_groups USING btree (group_id);
 
 
 --
--- Name: auth_user_groups_user_id_6a12ed8b; Type: INDEX; Schema: public; Owner: postgres
+-- Name: auth_user_groups_user_id_6a12ed8b; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX auth_user_groups_user_id_6a12ed8b ON public.auth_user_groups USING btree (user_id);
 
 
 --
--- Name: auth_user_user_permissions_permission_id_1fbb5f2c; Type: INDEX; Schema: public; Owner: postgres
+-- Name: auth_user_user_permissions_permission_id_1fbb5f2c; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX auth_user_user_permissions_permission_id_1fbb5f2c ON public.auth_user_user_permissions USING btree (permission_id);
 
 
 --
--- Name: auth_user_user_permissions_user_id_a95ead1b; Type: INDEX; Schema: public; Owner: postgres
+-- Name: auth_user_user_permissions_user_id_a95ead1b; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX auth_user_user_permissions_user_id_a95ead1b ON public.auth_user_user_permissions USING btree (user_id);
 
 
 --
--- Name: auth_user_username_6821ab7c_like; Type: INDEX; Schema: public; Owner: postgres
+-- Name: auth_user_username_6821ab7c_like; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX auth_user_username_6821ab7c_like ON public.auth_user USING btree (username varchar_pattern_ops);
 
 
 --
--- Name: authtoken_token_key_10f0b77e_like; Type: INDEX; Schema: public; Owner: postgres
+-- Name: authtoken_token_key_10f0b77e_like; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX authtoken_token_key_10f0b77e_like ON public.authtoken_token USING btree (key varchar_pattern_ops);
 
 
 --
--- Name: django_admin_log_content_type_id_c4bce8eb; Type: INDEX; Schema: public; Owner: postgres
+-- Name: django_admin_log_content_type_id_c4bce8eb; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX django_admin_log_content_type_id_c4bce8eb ON public.django_admin_log USING btree (content_type_id);
 
 
 --
--- Name: django_admin_log_user_id_c564eba6; Type: INDEX; Schema: public; Owner: postgres
+-- Name: django_admin_log_user_id_c564eba6; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX django_admin_log_user_id_c564eba6 ON public.django_admin_log USING btree (user_id);
 
 
 --
--- Name: django_session_expire_date_a5c62663; Type: INDEX; Schema: public; Owner: postgres
+-- Name: django_session_expire_date_a5c62663; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX django_session_expire_date_a5c62663 ON public.django_session USING btree (expire_date);
 
 
 --
--- Name: django_session_session_key_c0390e0f_like; Type: INDEX; Schema: public; Owner: postgres
+-- Name: django_session_session_key_c0390e0f_like; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX django_session_session_key_c0390e0f_like ON public.django_session USING btree (session_key varchar_pattern_ops);
 
 
 --
--- Name: dtree_codeforcestree_parent_id_8e4784d8; Type: INDEX; Schema: public; Owner: postgres
+-- Name: dtree_codeforcestree_parent_id_8e4784d8; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX dtree_codeforcestree_parent_id_8e4784d8 ON public.dtree_codeforcestree USING btree (parent_id);
 
 
 --
--- Name: dtree_codeforcestree_tree_id_67047826; Type: INDEX; Schema: public; Owner: postgres
+-- Name: dtree_codeforcestree_tree_id_67047826; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX dtree_codeforcestree_tree_id_67047826 ON public.dtree_codeforcestree USING btree (tree_id);
 
 
 --
--- Name: dtree_ruletree_parent_id_f877b62e; Type: INDEX; Schema: public; Owner: postgres
+-- Name: dtree_ruletree_parent_id_f877b62e; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX dtree_ruletree_parent_id_f877b62e ON public.dtree_ruletree USING btree (parent_id);
 
 
 --
--- Name: dtree_ruletree_tree_id_83a89a2f; Type: INDEX; Schema: public; Owner: postgres
+-- Name: dtree_ruletree_tree_id_83a89a2f; Type: INDEX; Schema: public; Owner: rassulkhassen
 --
 
 CREATE INDEX dtree_ruletree_tree_id_83a89a2f ON public.dtree_ruletree USING btree (tree_id);
 
 
 --
--- Name: auth_group_permissions auth_group_permissio_permission_id_84c5c92e_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_group_permissions auth_group_permissio_permission_id_84c5c92e_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -1603,7 +1476,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 
 --
--- Name: auth_group_permissions auth_group_permissions_group_id_b120cbf9_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_group_permissions auth_group_permissions_group_id_b120cbf9_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_group_permissions
@@ -1611,7 +1484,7 @@ ALTER TABLE ONLY public.auth_group_permissions
 
 
 --
--- Name: auth_permission auth_permission_content_type_id_2f476e4b_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_permission auth_permission_content_type_id_2f476e4b_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_permission
@@ -1619,7 +1492,7 @@ ALTER TABLE ONLY public.auth_permission
 
 
 --
--- Name: auth_user_groups auth_user_groups_group_id_97559544_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_user_groups auth_user_groups_group_id_97559544_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user_groups
@@ -1627,7 +1500,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 
 --
--- Name: auth_user_groups auth_user_groups_user_id_6a12ed8b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_user_groups auth_user_groups_user_id_6a12ed8b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user_groups
@@ -1635,7 +1508,7 @@ ALTER TABLE ONLY public.auth_user_groups
 
 
 --
--- Name: auth_user_user_permissions auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_user_user_permissions auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions
@@ -1643,7 +1516,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 
 --
--- Name: auth_user_user_permissions auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: auth_user_user_permissions auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.auth_user_user_permissions
@@ -1651,7 +1524,7 @@ ALTER TABLE ONLY public.auth_user_user_permissions
 
 
 --
--- Name: authtoken_token authtoken_token_user_id_35299eff_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: authtoken_token authtoken_token_user_id_35299eff_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.authtoken_token
@@ -1659,7 +1532,7 @@ ALTER TABLE ONLY public.authtoken_token
 
 
 --
--- Name: django_admin_log django_admin_log_content_type_id_c4bce8eb_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: django_admin_log django_admin_log_content_type_id_c4bce8eb_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.django_admin_log
@@ -1667,7 +1540,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 
 --
--- Name: django_admin_log django_admin_log_user_id_c564eba6_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: django_admin_log django_admin_log_user_id_c564eba6_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.django_admin_log
@@ -1675,7 +1548,7 @@ ALTER TABLE ONLY public.django_admin_log
 
 
 --
--- Name: dtree_codeforcestree dtree_codeforcestree_parent_id_8e4784d8_fk_dtree_cod; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: dtree_codeforcestree dtree_codeforcestree_parent_id_8e4784d8_fk_dtree_cod; Type: FK CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.dtree_codeforcestree
@@ -1683,7 +1556,7 @@ ALTER TABLE ONLY public.dtree_codeforcestree
 
 
 --
--- Name: dtree_ruletree dtree_ruletree_parent_id_f877b62e_fk_dtree_ruletree_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: dtree_ruletree dtree_ruletree_parent_id_f877b62e_fk_dtree_ruletree_id; Type: FK CONSTRAINT; Schema: public; Owner: rassulkhassen
 --
 
 ALTER TABLE ONLY public.dtree_ruletree
