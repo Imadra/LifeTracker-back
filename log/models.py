@@ -12,7 +12,7 @@ class Log(models.Model):
     	HAPPY = 'HP', _('HAPPY')
     	OTHER = 'O', _('OTHER')
 
-    text = models.TextField(max_length=500, default="No text")
+    text = models.TextField(max_length=2500, default="No text")
     date = models.DateField(default=datetime.now)
     time = models.TimeField(default=datetime.now)
     important = models.BooleanField(default=False)

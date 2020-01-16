@@ -66,3 +66,35 @@ class Get(APIView):
 			print(str(e))
 			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
 		return Response(status=status.HTTP_200_OK, data=PersonSerializer(person).data)
+
+@permission_classes([IsAuthenticated])
+class Edit(APIView):
+	def post(self, request):
+		id = request.data.get("id")
+		name = request.data.get("name")
+		age = request.data.get("age")
+		occupation = request.data.get("occupation")
+		field = request.data.get("field")
+		habits = request.data.get("habits")
+		strengths = request.data.get("strengths")
+		weaknesses = request.data.get("weaknesses")
+		happiness = request.data.get("happiness")
+		description = request.data.get("description")
+		commentary = request.data.get("commentary")
+		try:
+			person = Person.objects.get(id=id)
+			person.name = name
+			person.age = age
+			person.occupation = occupation
+			person.field = field
+			person.habit_list = habits
+			person.strength_list = strengths
+			person.weakness_list = weaknesses
+			person.happiness = happiness
+			person.description = description
+			person.commentary = commentary
+			person.save()
+		except Exception as e:
+			print(str(e))
+			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
+		return Response(status=status.HTTP_200_OK, data=PersonSerializer(person).data)
