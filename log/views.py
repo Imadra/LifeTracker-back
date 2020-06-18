@@ -24,22 +24,19 @@ class Add(APIView):
 		try:
 			Log.objects.create(**args)
 		except Exception as e:
-			# print(str(e))
-			# print("-------------------------------------------------------")
-			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
+			print(str(e))
+			return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
 		return Response(status=status.HTTP_200_OK, data="Codeforces red koi")
 
 @permission_classes([IsAuthenticated])
 class Delete(APIView):
 	def post(self, request):
 		id = request.data.get("id")
-		print(id)
 		try:
-			Log.objects.filter(id=id).delete()
+			Log.objects.get(id=id).delete()
 		except Exception as e:
 			print(str(e))
-			print("-------------------------------------------------------")
-			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
+			return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
 		return Response(status=status.HTTP_200_OK, data="Log: Codeforces redblack koi")
 
 @permission_classes([IsAuthenticated])

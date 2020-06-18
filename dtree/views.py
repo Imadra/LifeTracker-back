@@ -4,66 +4,90 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import permission_classes, api_view
 
-from .models import CodeforcesTree, RuleTree, EconTree
+from .models import Tree
 
 @permission_classes([IsAuthenticated])
-class CodeforcesAdd(APIView):
+class AddNode(APIView):
 	def post(self, request):
-		name = request.data.get("name")
-		# attributes = request.data.get("attributes")
+		node = request.data.get("node")
 		parent_id = request.data.get("parent_id")
+		tree = request.data.get("tree")
+
+		print(parent_id)
+		if parent_id != -1:
+			try:
+				parent = Tree.objects.get(id=parent_id)
+			except Exception as e:
+				print(str(e))
+				return Response(status=status.HTTP_403_FORBIDDEN, data="No such parent id")
+			if parent.tree != tree:
+				return Response(status=status.HTTP_403_FORBIDDEN, data="Parent is not in the same tree")
+		else:
+			parent_id = None
 
 		args = {
-			"name": name, 
+			"node": node,
 			"parent_id": parent_id,
+			"tree": tree,
 		}
 		try:
-			CodeforcesTree.objects.create(**args)
+			Tree.objects.create(**args)
 		except Exception as e:
 			print(str(e))
-			print("-------------------------------------------------------")
 			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
 		return Response(status=status.HTTP_200_OK, data="Codeforces: Codeforces redblack koi")
 
 @permission_classes([IsAuthenticated])
-class CodeforcesUpdate(APIView):
+class UpdateNode(APIView):
 	def post(self, request):
 		id = request.data.get("id")
 		name = request.data.get("name")
-		node = CodeforcesTree.objects.filter(id=id)[0]
-		print(node)
-		node.name = name
+		tree = request.data.get("tree")
+		try:
+			node = Tree.objects.get(id=id)
+		except Exception as e:
+			print(str(e))
+			return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
+		if node.tree != tree:
+			return Response(status=status.HTTP_403_FORBIDDEN, data="Node is not in the same tree")
+		node.node = name
 		try:
 			node.save()
 		except Exception as e:
 			print(str(e))
-			print("-------------------------------------------------------")
-			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
+			return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
 		return Response(status=status.HTTP_200_OK, data="CodeforcesTree: Codeforces redblack koi")
 
 @permission_classes([IsAuthenticated])
-class CodeforcesDelete(APIView):
+class DeleteNode(APIView):
 	def post(self, request):
 		id = request.data.get("id")
-		print(id)
+		tree = request.data.get("tree")
 		try:
-			CodeforcesTree.objects.filter(id=id).delete()
+			node = Tree.objects.get(id=id)
 		except Exception as e:
 			print(str(e))
-			print("-------------------------------------------------------")
-			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
+			return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
+		if node.tree != tree:
+			return Response(status=status.HTTP_403_FORBIDDEN, data="Node is not in the same tree")
+		try:
+			node.delete()
+		except Exception as e:
+			print(str(e))
+			return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
 		return Response(status=status.HTTP_200_OK, data="CodeforcesTree: Codeforces redblack koi")
 
 @permission_classes([IsAuthenticated])
-class CodeforcesGet(APIView):
+class GetTree(APIView):
 	def get(self, request):
-		tree = CodeforcesTree.objects.values()
+		tree_name = request.GET.get('tree')
+		tree = Tree.objects.filter(tree=tree_name).values()
 		for node in tree:
 			node["children"] = []
+			node["name"] = node["node"]
 			node["attributes"] = {"id": node["id"]}
 			node["_collapsed"] = True
 		tree.reverse()
-		# print(tree)
 		new_tree = []
 		for node in tree:
 			new_tree.append(node)
@@ -71,144 +95,16 @@ class CodeforcesGet(APIView):
 				if node_par["id"] == node["parent_id"]:
 					node_par["children"].append(node)
 					new_tree.remove(node)
-		new_tree[0]["_collapsed"] = False
-		# print(new_tree)
+		if len(new_tree):
+			new_tree[0]["_collapsed"] = False
 		return Response(status=status.HTTP_200_OK, data=new_tree)
 
 @permission_classes([IsAuthenticated])
-class RulesAdd(APIView):
-	def post(self, request):
-		name = request.data.get("name")
-		# attributes = request.data.get("attributes")
-		parent_id = request.data.get("parent_id")
-
-		args = {
-			"name": name, 
-			"parent_id": parent_id,
-		}
-		try:
-			RuleTree.objects.create(**args)
-		except Exception as e:
-			print(str(e))
-			print("-------------------------------------------------------")
-			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
-		return Response(status=status.HTTP_200_OK, data="RuleTree: Codeforces redblack koi")
-
-@permission_classes([IsAuthenticated])
-class RulesUpdate(APIView):
-	def post(self, request):
-		id = request.data.get("id")
-		name = request.data.get("name")
-		node = RuleTree.objects.filter(id=id)[0]
-		print(node)
-		node.name = name
-		try:
-			node.save()
-		except Exception as e:
-			print(str(e))
-			print("-------------------------------------------------------")
-			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
-		return Response(status=status.HTTP_200_OK, data="RuleTree: Codeforces redblack koi")
-
-@permission_classes([IsAuthenticated])
-class RulesDelete(APIView):
-	def post(self, request):
-		id = request.data.get("id")
-		print(id)
-		try:
-			RuleTree.objects.filter(id=id).delete()
-		except Exception as e:
-			print(str(e))
-			print("-------------------------------------------------------")
-			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
-		return Response(status=status.HTTP_200_OK, data="RuleTree: Codeforces redblack koi")
-
-@permission_classes([IsAuthenticated])
-class RulesGet(APIView):
+class GetAllTrees(APIView):
 	def get(self, request):
-		tree = RuleTree.objects.values()
-		for node in tree:
-			node["children"] = []
-			node["attributes"] = {"id": node["id"]}
-			node["_collapsed"] = True
-		tree.reverse()
-		# print(tree)
-		new_tree = []
-		for node in tree:
-			new_tree.append(node)
-			for node_par in tree:
-				if node_par["id"] == node["parent_id"]:
-					node_par["children"].append(node)
-					new_tree.remove(node)
-		new_tree[0]["_collapsed"] = False
-		print(new_tree)
-		return Response(status=status.HTTP_200_OK, data=new_tree)
-
-@permission_classes([IsAuthenticated])
-class EconAdd(APIView):
-	def post(self, request):
-		name = request.data.get("name")
-		# attributes = request.data.get("attributes")
-		parent_id = request.data.get("parent_id")
-
-		args = {
-			"name": name,
-			"parent_id": parent_id,
-		}
-		try:
-			EconTree.objects.create(**args)
-		except Exception as e:
-			print(str(e))
-			print("-------------------------------------------------------")
-			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
-		return Response(status=status.HTTP_200_OK, data="EconTree: Codeforces redblack koi")
-
-@permission_classes([IsAuthenticated])
-class EconUpdate(APIView):
-	def post(self, request):
-		id = request.data.get("id")
-		name = request.data.get("name")
-		node = EconTree.objects.filter(id=id)[0]
-		print(node)
-		node.name = name
-		try:
-			node.save()
-		except Exception as e:
-			print(str(e))
-			print("-------------------------------------------------------")
-			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
-		return Response(status=status.HTTP_200_OK, data="EconTree: Codeforces redblack koi")
-
-@permission_classes([IsAuthenticated])
-class EconDelete(APIView):
-	def post(self, request):
-		id = request.data.get("id")
-		print(id)
-		try:
-			EconTree.objects.filter(id=id).delete()
-		except Exception as e:
-			print(str(e))
-			print("-------------------------------------------------------")
-			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
-		return Response(status=status.HTTP_200_OK, data="EconTree: Codeforces redblack koi")
-
-@permission_classes([IsAuthenticated])
-class EconGet(APIView):
-	def get(self, request):
-		tree = EconTree.objects.values()
-		for node in tree:
-			node["children"] = []
-			node["attributes"] = {"id": node["id"]}
-			node["_collapsed"] = True
-		tree.reverse()
-		# print(tree)
-		new_tree = []
-		for node in tree:
-			new_tree.append(node)
-			for node_par in tree:
-				if node_par["id"] == node["parent_id"]:
-					node_par["children"].append(node)
-					new_tree.remove(node)
-		new_tree[0]["_collapsed"] = False
-		print(new_tree)
-		return Response(status=status.HTTP_200_OK, data=new_tree)
+		trees = Tree.objects.values()
+		resp = []
+		for el in trees:
+			if el["tree"] not in resp:
+				resp.append(el["tree"])
+		return Response(status=status.HTTP_200_OK, data=resp)
