@@ -96,11 +96,11 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lifetracker',
-        'USER': 'rassulkhassen',
-        'PASSWORD': '230091rasTRUNCATE django_content_type;',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'dn41b3696gr7p',
+        'USER': 'vdbotclrixfmyr',
+        'PASSWORD': 'c6ee1220a25803426b065dcd090fc30a3cfdaaac4ac49adb1e3fddbe819e574a;',
+        'HOST': 'ec2-50-17-90-177.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
