@@ -1,1 +1,1 @@
-web: gunicorn lifetracker-backend.wsgi
+web: gunicorn back.wsgi
