@@ -14,39 +14,42 @@ from rest_framework.decorators import permission_classes, api_view
 
 from .models import Log
 
+
 @permission_classes([IsAuthenticated])
 class Add(APIView):
-	def post(self, request):
-		text = request.data.get("text")
-		important = request.data.get("important")
-		category = request.data.get("category").upper()
-		args = {"text": text, "important": important, "category": Log.Category[category]}
-		try:
-			Log.objects.create(**args)
-		except Exception as e:
-			print(str(e))
-			return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
-		return Response(status=status.HTTP_200_OK, data="Codeforces red koi")
+    def post(self, request):
+        text = request.data.get("text")
+        important = request.data.get("important")
+        category = request.data.get("category").upper()
+        args = {"text": text, "important": important, "category": Log.Category[category]}
+        try:
+            Log.objects.create(**args)
+        except Exception as e:
+            print(str(e))
+            return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
+        return Response(status=status.HTTP_200_OK, data="Codeforces red koi")
+
 
 @permission_classes([IsAuthenticated])
 class Delete(APIView):
-	def post(self, request):
-		id = request.data.get("id")
-		try:
-			Log.objects.get(id=id).delete()
-		except Exception as e:
-			print(str(e))
-			return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
-		return Response(status=status.HTTP_200_OK, data="Log: Codeforces redblack koi")
+    def post(self, request):
+        id = request.data.get("id")
+        try:
+            Log.objects.get(id=id).delete()
+        except Exception as e:
+            print(str(e))
+            return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
+        return Response(status=status.HTTP_200_OK, data="Log: Codeforces redblack koi")
+
 
 @permission_classes([IsAuthenticated])
 class GetAll(APIView):
-	def get(self, request):
-		logs = Log.objects.values()
-		ret = []
-		for log in logs:
-			cur = log
-			cur["time"] = str(log["date"]) + " => " + str(log["time"]).split(".")[0]
-			ret.append(cur)
-		ret.reverse()
-		return Response(status=status.HTTP_200_OK, data=ret)
+    def get(self, request):
+        logs = Log.objects.values()
+        ret = []
+        for log in logs:
+            cur = log
+            cur["time"] = str(log["date"]) + " => " + str(log["time"]).split(".")[0]
+            ret.append(cur)
+        ret.reverse()
+        return Response(status=status.HTTP_200_OK, data=ret)

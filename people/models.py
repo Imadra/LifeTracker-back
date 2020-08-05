@@ -2,26 +2,27 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.postgres.fields import ArrayField
 
+
+
 # Create your models here.
 class Person(models.Model):
-
     name = models.CharField(max_length=50, default="")
     age = models.IntegerField(default=0)
     commentary = models.CharField(max_length=100, default="")
     strength_list = ArrayField(
-            models.CharField(max_length=50, default=""),
-            blank=True,
-            default=list()
-        )
+        models.CharField(max_length=50, default=""),
+        blank=True,
+        default=list
+    )
     weakness_list = ArrayField(
-            models.CharField(max_length=50, default=""),
-            blank=True,
-            default=list()
-        )
+        models.CharField(max_length=50, default=""),
+        blank=True,
+        default=list
+    )
     habit_list = ArrayField(
         models.CharField(max_length=50, default=""),
         blank=True,
-        default=list()
+        default=list
     )
     occupation = models.CharField(max_length=100, default="")
     field = models.CharField(max_length=100, default="")

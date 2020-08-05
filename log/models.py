@@ -2,7 +2,8 @@ from django.db import models
 # from django.utils.timezone import localtime
 # local = localtime(new datetime())
 from django.utils.translation import gettext_lazy as _
-from datetime import datetime
+# from django.utils import timezone
+
 
 # Create your models here.
 class Log(models.Model):
