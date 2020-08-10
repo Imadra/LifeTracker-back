@@ -3,6 +3,7 @@ from django.db import models
 # local = localtime(new datetime())
 from django.utils.translation import gettext_lazy as _
 # from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -18,6 +19,7 @@ class Log(models.Model):
     time = models.TimeField(auto_now=True)
     important = models.BooleanField(default=False)
     category = models.CharField(max_length=20, choices=Category.choices, default=Category.OTHER)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.id)

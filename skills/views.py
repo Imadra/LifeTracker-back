@@ -7,6 +7,7 @@ from rest_framework.decorators import permission_classes, api_view
 from .models import Skill
 from .serializers import SkillSerializer
 
+
 @permission_classes([IsAuthenticated])
 class Add(APIView):
 	def post(self, request):
@@ -17,19 +18,20 @@ class Add(APIView):
 		importance = request.data.get("importance")
 
 		args = {
-			"name": name, 
-			"commentary": commentary, 
-			"field": field, 
-			"comprehense": comprehense, 
+			"name": name,
+			"commentary": commentary,
+			"field": field,
+			"comprehense": comprehense,
 			"importance": importance,
 		}
 		try:
-			Skill.objects.create(**args)
+			Skill.objects.create(**args, user=request.user)
 		except Exception as e:
 			# print(str(e))
 			# print("-------------------------------------------------------")
 			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
 		return Response(status=status.HTTP_200_OK, data="Skill: Codeforces redblack koi")
+
 
 @permission_classes([IsAuthenticated])
 class Get(APIView):
@@ -37,11 +39,12 @@ class Get(APIView):
 		id = request.GET.get("id")
 		print(id)
 		try:
-			skill = Skill.objects.get(id=id)
+			skill = Skill.objects.get(id=id, user=request.user)
 		except Exception as e:
 			print(str(e))
 			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
 		return Response(status=status.HTTP_200_OK, data=SkillSerializer(skill).data)
+
 
 @permission_classes([IsAuthenticated])
 class Update(APIView):
@@ -54,7 +57,7 @@ class Update(APIView):
 		comprehense = request.data.get("comprehense")
 		print(id)
 		try:
-			skill = Skill.objects.get(id=id)
+			skill = Skill.objects.get(id=id, user=request.user)
 			skill.name = name
 			skill.importance = importance
 			skill.field = field
@@ -66,21 +69,25 @@ class Update(APIView):
 			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
 		return Response(status=status.HTTP_200_OK, data=SkillSerializer(skill).data)
 
+
 @permission_classes([IsAuthenticated])
 class Delete(APIView):
 	def post(self, request):
 		id = request.data.get("id")
 		print(id)
 		try:
-			Skill.objects.filter(id=id).delete()
+			Skill.objects.filter(id=id, user=request.user).delete()
 		except Exception as e:
 			print(str(e))
 			print("-------------------------------------------------------")
 			return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
 		return Response(status=status.HTTP_200_OK, data="Skill: Codeforces redblack koi")
 
+
 @permission_classes([IsAuthenticated])
 class GetAll(APIView):
 	def get(self, request):
-		people = Skill.objects.values()
-		return Response(status=status.HTTP_200_OK, data=people)
+		skills = list(Skill.objects.filter(user=request.user).values())
+		for skill in skills:
+			del skill["user_id"]
+		return Response(status=status.HTTP_200_OK, data=skills)

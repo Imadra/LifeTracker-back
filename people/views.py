@@ -31,7 +31,7 @@ class Add(APIView):
             "description": "",
         }
         try:
-            Person.objects.create(**args)
+            Person.objects.create(**args, user=request.user)
         except Exception as e:
             print(str(e))
             # print("-------------------------------------------------------")
@@ -45,7 +45,7 @@ class Delete(APIView):
         id = request.data.get("id")
         print(id)
         try:
-            Person.objects.filter(id=id).delete()
+            Person.objects.filter(id=id, user=request.user).delete()
         except Exception as e:
             print(str(e))
             print("-------------------------------------------------------")
@@ -56,7 +56,7 @@ class Delete(APIView):
 @permission_classes([IsAuthenticated])
 class GetAll(APIView):
     def get(self, request):
-        people = Person.objects.values()
+        people = Person.objects.filter(user=request.user).values()
         return Response(status=status.HTTP_200_OK, data=people)
 
 
@@ -65,7 +65,7 @@ class Get(APIView):
     def get(self, request):
         id = request.GET.get("id")
         try:
-            person = Person.objects.get(id=id)
+            person = Person.objects.get(id=id, user=request.user)
         except Exception as e:
             print(str(e))
             return Response(status=status.HTTP_403_FORBIDDEN, data="Error")
@@ -87,7 +87,7 @@ class Edit(APIView):
         description = request.data.get("description")
         commentary = request.data.get("commentary")
         try:
-            person = Person.objects.get(id=id)
+            person = Person.objects.get(id=id, user=request.user)
             person.name = name
             person.age = age
             person.occupation = occupation

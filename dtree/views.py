@@ -30,6 +30,7 @@ class AddNode(APIView):
             "node": node,
             "parent_id": parent_id,
             "tree": tree,
+            "user": request.user
         }
         try:
             Tree.objects.create(**args)
@@ -52,6 +53,8 @@ class UpdateNode(APIView):
             return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
         if node.tree != tree:
             return Response(status=status.HTTP_403_FORBIDDEN, data="Node is not in the same tree")
+        if node.user_id != request.user.id:
+            return Response(status=status.HTTP_403_FORBIDDEN, data="Not your tree")
         node.node = name
         try:
             node.save()
@@ -73,6 +76,8 @@ class DeleteNode(APIView):
             return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
         if node.tree != tree:
             return Response(status=status.HTTP_403_FORBIDDEN, data="Node is not in the same tree")
+        if node.user_id != request.user.id:
+            return Response(status=status.HTTP_403_FORBIDDEN, data="Not your tree")
         try:
             node.delete()
         except Exception as e:
@@ -87,6 +92,8 @@ class GetTree(APIView):
         tree_name = request.GET.get('tree')
         tree = Tree.objects.filter(tree=tree_name).values()
         for node in tree:
+            if node["user_id"] != request.user.id:
+                return Response(status=status.HTTP_403_FORBIDDEN, data="Not your tree")
             node["children"] = []
             node["name"] = node["node"]
             node["attributes"] = {"id": node["id"]}
@@ -110,6 +117,6 @@ class GetAllTrees(APIView):
         trees = Tree.objects.values()
         resp = []
         for el in trees:
-            if el["tree"] not in resp:
+            if el["tree"] not in resp and request.user.id == el["user_id"]:
                 resp.append(el["tree"])
         return Response(status=status.HTTP_200_OK, data=resp)

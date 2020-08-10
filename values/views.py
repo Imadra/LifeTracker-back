@@ -20,7 +20,7 @@ class Add(APIView):
             "value_type": Value.Type[value_type]
         }
         try:
-            Value.objects.create(**args)
+            Value.objects.create(**args, user=request.user)
         except Exception as e:
             # print(str(e))
             # print("-------------------------------------------------------")
@@ -34,7 +34,7 @@ class Delete(APIView):
         id = request.data.get("id")
         print(id)
         try:
-            Value.objects.filter(id=id).delete()
+            Value.objects.filter(id=id, user=request.user).delete()
         except Exception as e:
             print(str(e))
             print("-------------------------------------------------------")
@@ -45,14 +45,5 @@ class Delete(APIView):
 @permission_classes([IsAuthenticated])
 class GetAll(APIView):
     def get(self, request):
-        values = Value.objects.values()
-        # ret = []
-        # for person in people:
-        # 	cur = {}
-        # 	cur["name"] = person["name"]
-        # 	cur["important"] = log["important"]
-        # 	cur["category"] = log["category"]
-        # 	ret.append(cur)
-        # ret.reverse()
-        # print(values)
+        values = Value.objects.filter(user=request.user).values()
         return Response(status=status.HTTP_200_OK, data=values)

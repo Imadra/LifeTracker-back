@@ -21,7 +21,7 @@ class Add(APIView):
         text = request.data.get("text")
         important = request.data.get("important")
         category = request.data.get("category").upper()
-        args = {"text": text, "important": important, "category": Log.Category[category]}
+        args = {"text": text, "important": important, "category": Log.Category[category], "user": request.user}
         try:
             Log.objects.create(**args)
         except Exception as e:
@@ -35,10 +35,13 @@ class Delete(APIView):
     def post(self, request):
         id = request.data.get("id")
         try:
-            Log.objects.get(id=id).delete()
+            log = Log.objects.get(id=id)
         except Exception as e:
             print(str(e))
             return Response(status=status.HTTP_403_FORBIDDEN, data=str(e))
+        if request.user.id != log.user_id:
+            return Response(status=status.HTTP_403_FORBIDDEN, data="You are not allowed to delete this")
+        log.delete()
         return Response(status=status.HTTP_200_OK, data="Log: Codeforces redblack koi")
 
 
@@ -48,8 +51,10 @@ class GetAll(APIView):
         logs = Log.objects.values()
         ret = []
         for log in logs:
-            cur = log
-            cur["time"] = str(log["date"]) + " => " + str(log["time"]).split(".")[0]
-            ret.append(cur)
+            if log["user_id"] == request.user.id:
+                # print(log["user_id"] + " " + request.user.id)
+                cur = log
+                cur["time"] = str(log["date"]) + " => " + str(log["time"]).split(".")[0]
+                ret.append(cur)
         ret.reverse()
         return Response(status=status.HTTP_200_OK, data=ret)

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -10,6 +11,7 @@ class Task(models.Model):
     date = models.DateField(auto_now=True)
     done = models.BooleanField(default=False)
     finish_date = models.DateField(null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.id)
@@ -37,6 +39,7 @@ class Day(models.Model):
     # thoughts = ArrayField(models.CharField(max_length=10, blank=True), null=True)
     mood = models.CharField(max_length=20, choices=Mood.choices, default=Mood.NEUTRAL)
     tasks = models.ManyToManyField(Task)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.id)
