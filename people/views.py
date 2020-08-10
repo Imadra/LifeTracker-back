@@ -18,7 +18,11 @@ class Add(APIView):
         happiness = request.data.get("happiness")
         img = request.data.get("img")
         logo = request.data.get("logo")
-        # description = request.data.get("description")
+        description = request.data.get("description")
+        age = request.data.get("age")
+        habits = request.data.get("habits")
+        occupation = request.data.get("occupation")
+        field = request.data.get("field")
 
         args = {
             "name": name,
@@ -28,7 +32,11 @@ class Add(APIView):
             "happiness": happiness,
             "img": img,
             "logo": logo,
-            "description": "",
+            "description": description,
+            "age": age,
+            "habit_list": habits,
+            "occupation": occupation,
+            "field": field,
         }
         try:
             Person.objects.create(**args, user=request.user)

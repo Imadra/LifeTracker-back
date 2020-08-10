@@ -14,3 +14,19 @@ class Skill(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+
+class List(models.Model):
+    name: models.CharField(max_length=50, default="")
+    user: models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.id)
+
+
+class Entry(models.Model):
+    name: models.CharField(max_length=50, default="")
+    list: models.ForeignKey(List, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.id)

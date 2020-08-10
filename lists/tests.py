@@ -3,7 +3,7 @@ from rest_framework.test import APIClient
 from django.urls import reverse
 from django.contrib.auth.models import User
 import pytest
-from skills.models import Skill
+from lists.models import Skill
 from django.test import TestCase
 import datetime
 
