@@ -12,31 +12,23 @@ from .serializers import PersonSerializer
 class Add(APIView):
     def post(self, request):
         name = request.data.get("name")
-        commentary = request.data.get("commentary")
         strengths = request.data.get("strengths")
         weaknesses = request.data.get("weaknesses")
         happiness = request.data.get("happiness")
         img = request.data.get("img")
-        logo = request.data.get("logo")
         description = request.data.get("description")
         age = request.data.get("age")
         habits = request.data.get("habits")
-        occupation = request.data.get("occupation")
-        field = request.data.get("field")
 
         args = {
             "name": name,
-            "commentary": commentary,
             "strength_list": strengths,
             "weakness_list": weaknesses,
             "happiness": happiness,
             "img": img,
-            "logo": logo,
             "description": description,
             "age": age,
             "habit_list": habits,
-            "occupation": occupation,
-            "field": field,
         }
         try:
             Person.objects.create(**args, user=request.user)
@@ -86,26 +78,22 @@ class Edit(APIView):
         id = request.data.get("id")
         name = request.data.get("name")
         age = request.data.get("age")
-        occupation = request.data.get("occupation")
-        field = request.data.get("field")
         habits = request.data.get("habits")
         strengths = request.data.get("strengths")
         weaknesses = request.data.get("weaknesses")
         happiness = request.data.get("happiness")
         description = request.data.get("description")
-        commentary = request.data.get("commentary")
+        img = request.data.get("img")
         try:
             person = Person.objects.get(id=id, user=request.user)
             person.name = name
             person.age = age
-            person.occupation = occupation
-            person.field = field
             person.habit_list = habits
             person.strength_list = strengths
             person.weakness_list = weaknesses
             person.happiness = happiness
             person.description = description
-            person.commentary = commentary
+            person.img = img
             person.save()
         except Exception as e:
             print(str(e))

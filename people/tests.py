@@ -12,7 +12,11 @@ import datetime
 class TestModels(TestCase):
 
     def setUp(self):
-        Person.objects.create(name="Chandler")
+        self.username = 'test'
+        self.password = 'test'
+        user = User.objects.create_user(self.username, self.username, self.password)
+        user.save()
+        Person.objects.create(name="Chandler", user=user)
 
     def test_logs(self):
         person = Person.objects.all()
@@ -52,7 +56,7 @@ class TestViews(APITestCase):
         self.assertEquals(response.status_code, 200)
         # self.assertIsInstance(response.data, list)
         self.assertEquals(len(response.data), 0)
-        person = Person.objects.create(name="Chandler")
+        person = Person.objects.create(name="Chandler", user=self.user)
         person.save()
         response = self.client.get(self.get_all_persons)
         self.assertEquals(len(response.data), 1)

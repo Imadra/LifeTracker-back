@@ -11,9 +11,13 @@ from django.test import TestCase
 class TestModels(TestCase):
 
     def setUp(self):
-        Tree.objects.create(node="Node", tree="Tree1")
-        tree2 = Tree.objects.create(node="Root", tree="Tree2")
-        Tree.objects.create(node="Child", tree="Tree2", parent=tree2)
+        self.username = 'test'
+        self.password = 'test'
+        user = User.objects.create_user(self.username, self.username, self.password)
+        user.save()
+        Tree.objects.create(node="Node", tree="Tree1", user=user)
+        tree2 = Tree.objects.create(node="Root", tree="Tree2", user=user)
+        Tree.objects.create(node="Child", tree="Tree2", parent=tree2, user=user)
 
     def test_tree1(self):
         tree1 = Tree.objects.get(tree="Tree1")
@@ -50,7 +54,7 @@ class TestViews(APITestCase):
         self.assertEquals(response.status_code, 200)
         self.assertIsInstance(response.data, list)
         self.assertEquals(len(response.data), 0)
-        tree = Tree.objects.create(tree="Tree", node="Node")
+        tree = Tree.objects.create(tree="Tree", node="Node", user=self.user)
         tree.save()
         response = self.client.get(self.get_all_trees)
         self.assertEquals(len(response.data), 1)

@@ -13,8 +13,12 @@ import datetime
 class TestModels(TestCase):
 
     def setUp(self):
+        self.username = 'test'
+        self.password = 'test'
+        user = User.objects.create_user(self.username, self.username, self.password)
+        user.save()
         Log.objects.create(text="LogText", date=timezone.now(),
-                           time=timezone.now(), category='HP')
+                           time=timezone.now(), category='HP', user=user)
 
     def test_logs(self):
         log = Log.objects.all()
@@ -46,7 +50,7 @@ class TestViews(APITestCase):
         # self.assertIsInstance(response.data, list)
         self.assertEquals(len(response.data), 0)
         log = Log.objects.create(text="LogText", date=timezone.now(),
-                                 time=timezone.now(), category='HP')
+                                 time=timezone.now(), category='HP', user=self.user)
         log.save()
         response = self.client.get(self.get_all_logs)
         self.assertEquals(len(response.data), 1)
