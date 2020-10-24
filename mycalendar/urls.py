@@ -8,7 +8,7 @@ urlpatterns = [
     path('tasks/delete/', DeleteTask.as_view()),
     path('tasks/add/', AddTask.as_view()),
     path('tasks/update/', UpdateTask.as_view()),
-    path('tasks/getall/', GetAllTasks.as_view()),
+    path('tasks/getall/', GetAllTasks.as_view(), name="get_all_tasks"),
     path('tasks/finish/', FinishTask.as_view()),
     path('tasks/unfinish/', UnFinishTask.as_view()),
 ]

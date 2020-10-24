@@ -12,15 +12,18 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.conf import settings
 
+
 @permission_classes([])
 class Ping(APIView):
     def get(self, request):
         return Response(status=status.HTTP_200_OK, data="Codeforces orange")
 
+
 @permission_classes([IsAuthenticated])
 class CheckToken(APIView):
     def post(self, request):
         return Response(status=status.HTTP_200_OK, data=request.user.username)
+
 
 @csrf_exempt
 @api_view(["POST"])
@@ -37,6 +40,7 @@ def login(request):
         return Response({'error': 'Invalid Credentials'}, status=status.HTTP_404_NOT_FOUND)
     token, _ = Token.objects.get_or_create(user=user)
     return Response({'token': token.key}, status=status.HTTP_200_OK)
+
 
 @permission_classes([])
 class Register(APIView):
@@ -64,6 +68,7 @@ class Register(APIView):
         user.save()
         token = TokenSerializer(Token.objects.get(user=user))
         return Response(status=status.HTTP_200_OK, data=token.data)
+
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):

@@ -24,5 +24,5 @@ urlpatterns = [
     path('people/', include('people.urls')),
     path('values/', include('values.urls')),
     path('dtree/', include('dtree.urls')),
-    path('skills/', include('skills.urls')),
+    path('lists/', include('lists.urls')),
 ]
