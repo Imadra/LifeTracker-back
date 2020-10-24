@@ -48,5 +48,6 @@ class GetAll(APIView):
 			cur = log
 			cur["time"] = str(log["date"]) + " => " + str(log["time"]).split(".")[0]
 			ret.append(cur)
-		ret.reverse()
-		return Response(status=status.HTTP_200_OK, data=ret)
+		newlist = sorted(ret, key=lambda k: k['time'])
+		newlist.reverse()
+		return Response(status=status.HTTP_200_OK, data=newlist)
